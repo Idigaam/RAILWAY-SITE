@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VOYA - Checkout</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- ============ CHECKOUT ============ -->
+<div class="screen" id="checkout">
+<div class="screen-label">Checkout</div>
+<div class="navbar">
+    <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span>
+  <a class="btn btn-outline" href="home.html">Back to home</a>
+</div>
+<div class="section" style="padding-bottom:0">
+  <div class="breadcrumb"><span class="active">01 Trip</span> / <span class="active">02 Traveler details</span> / <span>03 Payment</span> / <span>04 Confirmation</span></div>
+  <h2 style="margin-bottom:2px">Complete your booking</h2>
+  <p style="color:var(--muted);margin-top:0;margin-bottom:24px">New York → London · Sat, 14 Nov · Economy</p>
+</div>
+<div class="checkout-grid">
+  <div>
+    <div class="card-box">
+      <h4>Traveler details</h4>
+      <div class="form-row">
+        <div class="form-group"><label>First name</label><input class="input" placeholder="Esther"></div>
+        <div class="form-group"><label>Last name</label><input class="input" placeholder="Tochukwu"></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Email address</label><input class="input" placeholder="you@email.com"></div>
+        <div class="form-group"><label>Phone</label><input class="input" placeholder="+234"></div>
+      </div>
+      <div class="form-group"><label>Age category</label>
+        <select class="input"><option>Young people (18-30)</option><option>Adults (31-50)</option><option>Seniors (51-70)</option></select>
+      </div>
+    </div>
+    <div class="card-box">
+      <h4>Payment method</h4>
+      <div class="payment-grid">
+        <div class="payment-option selected"><div>Credit card</div><div class="sub">Visa, Mastercard</div></div>
+        <div class="payment-option"><div>Bank transfer</div><div class="sub">1-2 day confirm</div></div>
+        <div class="payment-option"><div>PayPal</div><div class="sub">Instant</div></div>
+        <div class="payment-option"><div>Crypto</div><div class="sub">Premium riders</div></div>
+      </div>
+      <div class="form-row">
+        <div class="form-group"><label>Card number</label><input class="input" placeholder="•••• •••• •••• 4242"></div>
+        <div class="form-group"><label>Expiry</label><input class="input" placeholder="MM / YY"></div>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="card-box">
+      <h4>Order summary</h4>
+      <div class="mini-route">NYC → LON</div>
+      <div class="mini-meta">Sat, 14 Nov · Economy · 1 traveler</div>
+      <div class="fare-total-row"><span>Fare</span><span>$840.00</span></div>
+      <div class="fare-total-row"><span>Booking fee</span><span style="color:var(--teal-2)">Free</span></div>
+      <div class="fare-total-row total"><span>Total amount</span><span>$840.00</span></div>
+      <a class="btn btn-orange btn-block" style="margin-top:14px" href="confirmation.html">Confirm pay</a>
+      <div class="cancel-note">By continuing you agree to Voya's fare &amp; cancellation terms.</div>
+    </div>
+  </div>
+</div>
+<div class="footer">
+  <div class="footer-top">
+    <div> <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span><p>Riding the lines since 1924.</p></div>
+    <div class="footer-col"><h4>Travel</h4><a href="#">Rail Networks</a><a href="#">Route Maps</a></div>
+    <div class="footer-col"><h4>Account</h4><a href="bookings.html">My Bookings</a><a href="#">Preferences</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="#">Contact Support</a><a href="#">Privacy Policy</a></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 VOYA Rail. All rights reserved.</span><span>Ride the Line.</span></div>
+</div>
+</div>
+
+</body>
+</html>
