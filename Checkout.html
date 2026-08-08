@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VOYA - Checkout</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- ============ CHECKOUT ============ -->
+
+    <div class="screen" id="checkout">
+
+        <div class="screen-label">Checkout</div>
+
+        <!-- NAVBAR -->
+        <div class="navbar">
+
+            <span class="logo">
+                <img
+                    src="Media/voya-logo.png"
+                    alt="VOYA logo"
+                    width="100"
+                    height="100"
+                >
+            </span>
+
+            <a class="btn btn-outline" href="home.html">
+                Back to home
+            </a>
+
+        </div>
+
+
+        <!-- CHECKOUT INTRO -->
+        <div class="section" style="padding-bottom:0">
+
+            <div class="breadcrumb">
+                <span class="active">01 Trip</span>
+                /
+                <span class="active">02 Traveler details</span>
+                /
+                <span>03 Payment</span>
+                /
+                <span>04 Confirmation</span>
+            </div>
+
+            <h2 style="margin-bottom:2px">
+                Complete your booking
+            </h2>
+
+            <p style="color:var(--muted);margin-top:0;margin-bottom:24px">
+                New York → London · Sat, 14 Nov · Economy
+            </p>
+
+        </div>
+
+
+        <!-- CHECKOUT GRID -->
+        <div class="checkout-grid">
+
+            <!-- ================= LEFT SIDE ================= -->
+            <div>
+
+                <!-- TRAVELER DETAILS -->
+                <div class="card-box">
+
+                    <h4>Traveler details</h4>
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="firstName">
+                                First name
+                            </label>
+
+                            <input
+                                class="input"
+                                type="text"
+                                id="firstName"
+                                placeholder="Esther"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="lastName">
+                                Last name
+                            </label>
+
+                            <input
+                                class="input"
+                                type="text"
+                                id="lastName"
+                                placeholder="Tochukwu"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email address
+                            </label>
+
+                            <input
+                                class="input"
+                                type="email"
+                                id="email"
+                                placeholder="you@email.com"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone
+                            </label>
+
+                            <input
+                                class="input"
+                                type="tel"
+                                id="phone"
+                                placeholder="+234"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="ageCategory">
+                            Age category
+                        </label>
+
+                        <select
+                            class="input"
+                            id="ageCategory"
+                        >
+
+                            <option>
+                                Young people (18-30)
+                            </option>
+
+                            <option>
+                                Adults (31-50)
+                            </option>
+
+                            <option>
+                                Seniors (51-70)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ================= PAYMENT ================= -->
+                <div class="card-box">
+
+                    <h4>Payment method</h4>
+
+
+                    <!-- PAYMENT OPTIONS -->
+                    <div class="payment-grid">
+
+                        <!-- CREDIT CARD -->
+                        <div
+                            class="payment-option selected"
+                            data-payment="card"
+                        >
+
+                            <div>
+                                Credit card
+                            </div>
+
+                            <div class="sub">
+                                Visa, Mastercard
+                            </div>
+
+                        </div>
+
+
+                        <!-- BANK TRANSFER -->
+                        <div
+                            class="payment-option"
+                            data-payment="bank"
+                        >
+
+                            <div>
+                                Bank transfer
+                            </div>
+
+                            <div class="sub">
+                                1-2 day confirm
+                            </div>
+
+                        </div>
+
+
+                        <!-- PAYPAL -->
+                        <div
+                            class="payment-option"
+                            data-payment="paypal"
+                        >
+
+                            <div>
+                                PayPal
+                            </div>
+
+                            <div class="sub">
+                                Instant
+                            </div>
+
+                        </div>
+
+
+                        <!-- CRYPTO -->
+                        <div
+                            class="payment-option"
+                            data-payment="crypto"
+                        >
+
+                            <div>
+                                Crypto
+                            </div>
+
+                            <div class="sub">
+                                Premium riders
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= CREDIT CARD ================= -->
+                    <div id="cardPayment">
+
+                        <div class="form-row">
+
+                            <div class="form-group">
+
+                                <label for="cardNumber">
+                                    Card number
+                                </label>
+
+                                <input
+                                    class="input"
+                                    type="text"
+                                    id="cardNumber"
+                                    placeholder="•••• •••• •••• 4242"
+                                >
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label for="expiry">
+                                    Expiry
+                                </label>
+
+                                <input
+                                    class="input"
+                                    type="text"
+                                    id="expiry"
+                                    placeholder="MM / YY"
+                                >
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= BANK TRANSFER ================= -->
+                    <div
+                        id="bankPayment"
+                        style="display:none;"
+                    >
+
+                        <div class="payment-info">
+
+                            <h4>
+                                Bank transfer
+                            </h4>
+
+                            <p>
+                                Transfer the total amount to the
+                                VOYA Rail account shown after you
+                                continue.
+                            </p>
+
+                            <p>
+                                Your booking will be confirmed
+                                after payment is verified.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= PAYPAL ================= -->
+                    <div
+                        id="paypalPayment"
+                        style="display:none;"
+                    >
+
+                        <div class="payment-info">
+
+                            <h4>
+                                PayPal
+                            </h4>
+
+                            <p>
+                                You will be redirected to PayPal
+                                to complete your payment.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ================= CRYPTO ================= -->
+                    <div
+                        id="cryptoPayment"
+                        style="display:none;"
+                    >
+
+                        <div class="payment-info">
+
+                            <h4>
+                                Crypto payment
+                            </h4>
+
+                            <p>
+                                Crypto payment instructions will
+                                be displayed after you continue.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= RIGHT SIDE ================= -->
+            <div>
+
+                <!-- ORDER SUMMARY -->
+                <div class="card-box">
+
+                    <h4>
+                        Order summary
+                    </h4>
+
+
+                    <div class="mini-route">
+                        NYC → LON
+                    </div>
+
+
+                    <div class="mini-meta">
+                        Sat, 14 Nov · Economy · 1 traveler
+                    </div>
+
+
+                    <div class="fare-total-row">
+
+                        <span>
+                            Fare
+                        </span>
+
+                        <span>
+                            $840.00
+                        </span>
+
+                    </div>
+
+
+                    <div class="fare-total-row">
+
+                        <span>
+                            Booking fee
+                        </span>
+
+                        <span style="color:var(--teal-2)">
+                            Free
+                        </span>
+
+                    </div>
+
+
+                    <div class="fare-total-row total">
+
+                        <span>
+                            Total amount
+                        </span>
+
+                        <span>
+                            $840.00
+                        </span>
+
+                    </div>
+
+
+                    <!-- CONFIRM PAY -->
+                    <a
+                        class="btn btn-orange btn-block"
+                        id="confirmPayBtn"
+                        style="margin-top:14px"
+                        href="#"
+                    >
+                        Confirm pay
+                    </a>
+
+
+                    <div class="cancel-note">
+
+                        By continuing you agree to Voya's
+                        fare &amp; cancellation terms.
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= FOOTER ================= -->
+        <div class="footer">
+
+            <div class="footer-top">
+
+                <div>
+
+                    <span class="logo">
+
+                        <img
+                            src="Media/voya-logo.png"
+                            alt="VOYA logo"
+                            width="100"
+                            height="100"
+                        >
+
+                    </span>
+
+                    <p>
+                        Riding the lines since 1924.
+                    </p>
+
+                </div>
+
+
+                <div class="footer-col">
+
+                    <h4>
+                        Travel
+                    </h4>
+
+                    <a href="#">
+                        Rail Networks
+                    </a>
+
+                    <a href="#">
+                        Route Maps
+                    </a>
+
+                </div>
+
+
+                <div class="footer-col">
+
+                    <h4>
+                        Account
+                    </h4>
+
+                    <a href="bookings.html">
+                        My Bookings
+                    </a>
+
+                    <a href="#">
+                        Preferences
+                    </a>
+
+                </div>
+
+
+                <div class="footer-col">
+
+                    <h4>
+                        Support
+                    </h4>
+
+                    <a href="#">
+                        Contact Support
+                    </a>
+
+                    <a href="#">
+                        Privacy Policy
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="footer-bottom">
+
+                <span>
+                    © 2026 VOYA Rail. All rights reserved.
+                </span>
+
+                <span>
+                    Ride the Line.
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- CHECKOUT JAVASCRIPT -->
+    <script src="checkout.js"></script>
+
+</body>
+</html>

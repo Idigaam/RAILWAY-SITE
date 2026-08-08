@@ -6,53 +6,271 @@
     <title>VOYA-confirmation</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- ============ CONFIRMATION ============ -->
+
+<!-- ============ CONFIRMATION ============ -->
+
 <div class="screen" id="confirmation">
-<div class="screen-label">Confirmation</div>
-<div class="navbar">
-    <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span>
-  <a class="btn btn-outline" href="bookings.html">Back to bookings</a>
+
+    <div class="screen-label">Confirmation</div>
+
+    <div class="navbar">
+        <span class="logo">
+            <img src="Media/voya-logo.png" alt="VOYA logo" width="100" height="100">
+        </span>
+
+        <a class="btn btn-outline" href="bookings.html">
+            Back to bookings
+        </a>
+    </div>
+
+
+    <div class="confirm-banner">
+        <div class="confirm-check">✓</div>
+
+        <h2>Seat Secured!</h2>
+
+        <p>
+            Confirmation sent to your email — ticket ready below
+        </p>
+    </div>
+
+
+    <!-- TICKET -->
+
+    <div class="ticket-card">
+
+        <div class="ticket-top">
+            <span id="route">NYC → LON</span>
+
+            <span class="badge badge-business">
+                <span id="travelClass">ECONOMY</span>
+            </span>
+        </div>
+
+        <div class="ticket-dash"></div>
+
+
+        <div class="ticket-grid">
+
+            <div>
+                <div class="ticket-label">
+                    Passenger
+                </div>
+
+                <div
+                    class="ticket-value"
+                    id="passengerName"
+                >
+                    Esther T.
+                </div>
+            </div>
+
+
+            <div>
+                <div class="ticket-label">
+                    Booking ref
+                </div>
+
+                <span
+                    class="ticket-ref"
+                    id="bookingReference"
+                >
+                    Loading...
+                </span>
+            </div>
+
+
+            <div>
+                <div class="ticket-label">
+                    Departs
+                </div>
+
+                <div
+                    class="ticket-value"
+                    id="departure"
+                >
+                    Loading...
+                </div>
+            </div>
+
+
+            <div>
+                <div class="ticket-label">
+                    Arrives
+                </div>
+
+                <div
+                    class="ticket-value"
+                    id="arrival"
+                >
+                    Loading...
+                </div>
+            </div>
+
+
+            <div>
+                <div class="ticket-label">
+                    Platform
+                </div>
+
+                <div class="ticket-value">
+                    Penn Central · Pl. 6
+                </div>
+            </div>
+
+
+            <div>
+                <div class="ticket-label">
+                    Paid
+                </div>
+
+                <div
+                    class="ticket-value"
+                    id="paymentDetails"
+                >
+                    Loading...
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="barcode-wrap">
+            <div class="barcode"></div>
+
+            <div
+                class="barcode-num"
+                id="barcodeNumber"
+            >
+                Loading...
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- RATING -->
+
+    <div class="rating-card">
+
+        <h3>
+            How was booking with Voya?
+        </h3>
+
+        <p>
+            Your rating helps other riders pick the right fare.
+        </p>
+
+        <div class="stars">
+            ★★★★☆
+        </div>
+
+        <textarea
+            class="input"
+            placeholder="Tell us about your booking experience (optional)"
+        ></textarea>
+
+        <button
+            class="btn btn-orange"
+            id="feedbackBtn"
+            style="margin-top:14px"
+        >
+            Submit feedback
+        </button>
+
+    </div>
+
+
+    <div class="center-btn">
+
+        <a
+            class="btn btn-outline"
+            href="bookings.html"
+        >
+            Back to bookings
+        </a>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <div class="footer">
+
+        <div class="footer-top">
+
+            <div>
+                <span class="logo">
+                    <img
+                        src="Media/voya-logo.png"
+                        alt="VOYA logo"
+                        width="100"
+                        height="100"
+                    >
+                </span>
+
+                <p>
+                    Riding the lines since 1924.
+                </p>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Travel</h4>
+
+                <a href="#">Rail Networks</a>
+                <a href="#">Route Maps</a>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Account</h4>
+
+                <a href="bookings.html">
+                    My Bookings
+                </a>
+
+                <a href="#">
+                    Preferences
+                </a>
+            </div>
+
+
+            <div class="footer-col">
+                <h4>Support</h4>
+
+                <a href="#">
+                    Contact Support
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 VOYA Rail. All rights reserved.
+            </span>
+
+            <span>
+                Ride the Line.
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
-<div class="confirm-banner">
-  <div class="confirm-check">✓</div>
-  <h2>Seat Secured!</h2>
-  <p>Confirmation sent to your email — ticket ready below</p>
-</div>
-<div class="ticket-card">
-  <div class="ticket-top"><span>NYC → LON</span><span class="badge badge-business">BUSINESS</span></div>
-  <div class="ticket-dash"></div>
-  <div class="ticket-grid">
-    <div><div class="ticket-label">Passenger</div><div class="ticket-value">Esther T.</div></div>
-    <div><div class="ticket-label">Booking ref</div><span class="ticket-ref">LK-8842NY</span></div>
-    <div><div class="ticket-label">Departs</div><div class="ticket-value">Sat, 14 Nov · 08:40</div></div>
-    <div><div class="ticket-label">Arrives</div><div class="ticket-value">Sat, 14 Nov · 14:10</div></div>
-    <div><div class="ticket-label">Platform</div><div class="ticket-value">Penn Central · Pl. 6</div></div>
-    <div><div class="ticket-label">Paid</div><div class="ticket-value">$840 · Credit card</div></div>
-  </div>
-  <div class="barcode-wrap">
-    <div class="barcode"></div>
-    <div class="barcode-num">5842-1092-9904-4421</div>
-  </div>
-</div>
-<div class="rating-card">
-  <h3>How was booking with Voya?</h3>
-  <p>Your rating helps other riders pick the right fare.</p>
-  <div class="stars">★★★★☆</div>
-  <textarea class="input" placeholder="Tell us about your booking experience (optional)"></textarea>
-  <button class="btn btn-orange" style="margin-top:14px">Submit feedback</button>
-</div>
-<div class="center-btn"><a class="btn btn-outline" href="bookings.html">Back to bookings</a></div>
-<div class="footer">
-  <div class="footer-top">
-    <div> <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span><p>Riding the lines since 1924.</p></div>
-    <div class="footer-col"><h4>Travel</h4><a href="#">Rail Networks</a><a href="#">Route Maps</a></div>
-    <div class="footer-col"><h4>Account</h4><a href="bookings.html">My Bookings</a><a href="#">Preferences</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="#">Contact Support</a><a href="#">Privacy Policy</a></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 VOYA Rail. All rights reserved.</span><span>Ride the Line.</span></div>
-</div>
-</div>
+
+
+<script src="confirmation.js"></script>
 
 </body>
 </html>

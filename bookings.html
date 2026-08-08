@@ -6,67 +6,375 @@
     <title>VOYA-bookings</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <!-- ============ BOOKINGS ============ -->
-<div class="screen" id="bookings">
-<div class="screen-label">Bookings</div>
-<div class="navbar">
-    <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span>
-  <div class="navlinks"><a href="home.html">Home</a><a href="search.html">Search</a><a href="#">Destinations</a><a class="active" href="bookings.html">My bookings</a><a href="#">Help</a></div>
-  <div class="nav-actions"><a class="btn btn-outline" href="login.html">Login</a><a class="btn btn-orange" href="signup.html">Sign up</a></div>
-</div>
-<div class="profile-banner">
-  <div class="profile-left">
-    <div class="avatar">ET</div>
-    <div><h3>Esther T.</h3><p>Middle age · 6 trips booked · Member since 2023</p></div>
-  </div>
-  <a class="btn btn-orange" href="search.html">Book a new trip</a>
-</div>
-<div class="tabs">
-  <span class="active">Upcoming (1)</span><span>Past trips (4)</span><span>Saved routes</span><span>Payment methods</span>
-</div>
-<div class="section">
-  <div class="eyebrow">Upcoming</div>
-  <div class="booking-card">
-    <div>
-      <a class="back-link" href="search.html" style="color:var(--muted)">← Back to results</a>
-      <h3>New York → London</h3>
-      <div class="meta">Sat, 14 Nov 2026 · Departs 08:40 · Arrives 14:10 · 5h 30m</div>
-    </div>
-    <div style="display:flex;flex-direction:column;gap:8px">
-      <a class="btn btn-orange" href="confirmation.html">View Ticket</a>
-      <a class="btn btn-outline" href="login.html">Login</a>
-    </div>
-  </div>
 
-  <div class="eyebrow" style="margin-top:36px">Past trips — rate your ride</div>
-  <div class="past-grid">
-    <div class="past-card">
-      <div class="past-card-top"><div><h4>London — Tokyo</h4><div class="meta">12 Jul 2024 · Economy</div></div><span class="badge-dot">✓</span></div>
-      <div class="stars">★★★★★</div>
-      <div class="quote">"Smooth boarding, fare matched what I paid."</div>
-    </div>
-    <div class="past-card">
-      <div class="past-card-top"><div><h4>Cape Town — Sydney</h4><div class="meta">3 Mar 2024 · First Class</div></div></div>
-      <div class="stars" style="color:var(--border)">★★★★★</div>
-      <button class="btn btn-outline btn-block" style="margin-top:10px">Add rating</button>
-    </div>
-    <div class="past-card">
-      <div class="past-card-top"><div><h4>Bangkok — Rome</h4><div class="meta">19 Dec 2023 · Economy</div></div><span class="badge-dot">✓</span></div>
-      <div class="stars">★★★★☆</div>
-      <div class="quote">"Good value, would've liked more legroom."</div>
-    </div>
-  </div>
+<body>
+
+<!-- ============ BOOKINGS ============ -->
+<div class="screen" id="bookings">
+
+    <div class="screen-label">Bookings</div>
+
+    <!-- NAVBAR -->
+    <div class="navbar">
+
+        <span class="logo">
+            <img src="Media/voya-logo.png" alt="VOYA logo" width="100" height="100">
+        </span>
+
+        <div class="navlinks">
+    <a href="home.html">Home</a>
+    <a href="search.html">Search</a>
+    <a href="destinations.html">Destinations</a>
+    <a class="active" href="bookings.html">My bookings</a>
+    <a href="help.html">Help</a>
 </div>
-<div class="footer">
-  <div class="footer-top">
-    <div> <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span><p>Riding the lines since 1924. We connect the world through sustainable, high-speed, and luxurious rail travel.</p></div>
-    <div class="footer-col"><h4>Travel</h4><a href="#">Rail Networks</a><a href="#">Route Maps</a><a href="#">Station Guides</a><a href="#">Sustainability</a></div>
-    <div class="footer-col"><h4>Account</h4><a href="bookings.html">My Bookings</a><a href="#">LOKO Rewards</a><a href="#">Preferences</a><a href="#">Corporate Portal</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="#">Contact Support</a><a href="#">Refund Policy</a><a href="#">Terms of Service</a><a href="#">Privacy Policy</a></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 VOYA Rail. All rights reserved.</span><span>Ride the Line.</span></div>
+
+        <div class="nav-actions">
+            <a class="btn btn-outline" href="login.html">Login</a>
+            <a class="btn btn-orange" href="signup.html">Sign up</a>
+        </div>
+
+    </div>
+
+
+    <!-- PROFILE -->
+    <div class="profile-banner">
+
+        <div class="profile-left">
+
+            <div class="avatar">ET</div>
+
+            <div>
+                <h3>Esther T.</h3>
+                <p>Middle age · 6 trips booked · Member since 2023</p>
+            </div>
+
+        </div>
+
+        <a class="btn btn-orange" href="search.html">
+            Book a new trip
+        </a>
+
+    </div>
+
+
+    <!-- TABS -->
+    <div class="tabs">
+
+        <span class="tab active">Upcoming (1)</span>
+
+        <span class="tab">Past trips (4)</span>
+
+        <span class="tab">Saved routes</span>
+
+        <span class="tab">Payment methods</span>
+
+    </div>
+
+
+    <!-- ================= UPCOMING ================= -->
+    <div class="tab-content active-content" id="upcomingContent">
+
+        <div class="section">
+
+            <div class="eyebrow">Upcoming</div>
+
+            <div class="booking-card">
+
+                <div>
+
+                    <a class="back-link"
+                       href="search.html"
+                       style="color:var(--muted)">
+                        ← Back to results
+                    </a>
+
+                    <h3>New York → London</h3>
+
+                    <div class="meta">
+                        Sat, 14 Nov 2026 · Departs 08:40 ·
+                        Arrives 14:10 · 5h 30m
+                    </div>
+
+                </div>
+
+                <div style="display:flex;flex-direction:column;gap:8px">
+
+                    <a class="btn btn-orange"
+                       href="confirmation.html">
+                        View Ticket
+                    </a>
+
+                    <a class="btn btn-outline"
+                       id="loginBtn"
+                       href="#">
+                        Login
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAST TRIPS ================= -->
+    <div class="tab-content" id="pastTripsContent">
+
+        <div class="section">
+
+            <div class="eyebrow">
+                Past trips — rate your ride
+            </div>
+
+            <div class="past-grid">
+
+                <!-- TRIP 1 -->
+                <div class="past-card">
+
+                    <div class="past-card-top">
+
+                        <div>
+                            <h4>London — Tokyo</h4>
+
+                            <div class="meta">
+                                12 Jul 2024 · Economy
+                            </div>
+                        </div>
+
+                        <span class="badge-dot">✓</span>
+
+                    </div>
+
+                    <div class="stars">
+                        ★★★★★
+                    </div>
+
+                    <div class="quote">
+                        "Smooth boarding, fare matched what I paid."
+                    </div>
+
+                </div>
+
+
+                <!-- TRIP 2 -->
+                <div class="past-card">
+
+                    <div class="past-card-top">
+
+                        <div>
+                            <h4>Cape Town — Sydney</h4>
+
+                            <div class="meta">
+                                3 Mar 2024 · First Class
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="stars"
+                         style="color:var(--border)">
+                        ★★★★★
+                    </div>
+
+                    <button class="btn btn-outline btn-block"
+                            id="ratingBtn"
+                            style="margin-top:10px">
+                        Add rating
+                    </button>
+
+                </div>
+
+
+                <!-- TRIP 3 -->
+                <div class="past-card">
+
+                    <div class="past-card-top">
+
+                        <div>
+                            <h4>Bangkok — Rome</h4>
+
+                            <div class="meta">
+                                19 Dec 2023 · Economy
+                            </div>
+                        </div>
+
+                        <span class="badge-dot">✓</span>
+
+                    </div>
+
+                    <div class="stars">
+                        ★★★★☆
+                    </div>
+
+                    <div class="quote">
+                        "Good value, would've liked more legroom."
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= SAVED ROUTES ================= -->
+    <div class="tab-content" id="savedRoutesContent">
+
+        <div class="section">
+
+            <div class="eyebrow">
+                Saved routes
+            </div>
+
+            <div class="booking-card">
+
+                <div>
+
+                    <h3>New York → London</h3>
+
+                    <div class="meta">
+                        Your saved route
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <a class="btn btn-orange"
+                       href="search.html">
+                        Search this route
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAYMENT METHODS ================= -->
+    <div class="tab-content" id="paymentContent">
+
+        <div class="section">
+
+            <div class="eyebrow">
+                Payment methods
+            </div>
+
+            <div class="booking-card">
+
+                <div>
+
+                    <h3>Visa ending in 4242</h3>
+
+                    <div class="meta">
+                        Your saved payment method
+                    </div>
+
+                </div>
+
+                <div>
+
+                    <button class="btn btn-outline"
+                            id="removePaymentBtn">
+                        Remove
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= FOOTER ================= -->
+    <div class="footer">
+
+        <div class="footer-top">
+
+            <div>
+
+                <span class="logo">
+                    <img src="Media/voya-logo.png"
+                         alt="VOYA logo"
+                         width="100"
+                         height="100">
+                </span>
+
+                <p>
+                    Riding the lines since 1924. We connect the world
+                    through sustainable, high-speed, and luxurious rail travel.
+                </p>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Travel</h4>
+
+                <a href="#">Rail Networks</a>
+                <a href="#">Route Maps</a>
+                <a href="#">Station Guides</a>
+                <a href="#">Sustainability</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Account</h4>
+
+                <a href="bookings.html">My Bookings</a>
+                <a href="#">LOKO Rewards</a>
+                <a href="#">Preferences</a>
+                <a href="#">Corporate Portal</a>
+
+            </div>
+
+
+            <div class="footer-col">
+
+                <h4>Support</h4>
+
+                <a href="#">Contact Support</a>
+                <a href="#">Refund Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 VOYA Rail. All rights reserved.
+            </span>
+
+            <span>
+                Ride the Line.
+            </span>
+
+        </div>
+
+    </div>
+
 </div>
-</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="bookings.js"></script>
+
 </body>
 </html>
