@@ -1,3 +1,8 @@
+if (localStorage.getItem("voya_logged_in") !== "true") {
+    window.location.href = "login.html";
+    return;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   // Clear localStorage once to ensure clean test data if needed
   // localStorage.removeItem('voya_past_bookings');
