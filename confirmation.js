@@ -1,3 +1,7 @@
+
+if (localStorage.getItem("voya_logged_in") !== "true") {
+    window.location.href = "login.html";
+}
 document.addEventListener('DOMContentLoaded', () => {
   // ==========================================
   // 1. RETRIEVE & POPULATE TICKET DATA
