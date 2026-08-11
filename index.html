@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOYA-RAIL BOOKING</title>
+
+    <title>VOYA Rail — Travel by Train</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<!-- ============ HOME ============ -->
-
-<div class="screen" id="home">
-
-<div class="screen-label">Home</div>
+<!-- =========================
+     TOP TICKER
+========================= -->
 
 <div class="ticker">
     <span>London → Tokyo · from $840</span>
@@ -24,22 +24,19 @@
 </div>
 
 
-<!-- NAVBAR -->
+<!-- =========================
+     NAVIGATION
+========================= -->
 
-<div class="navbar">
+<header class="navbar">
 
-    <span class="logo">
-        <img
-            src="Media/voya-logo.png"
-            alt="VOYA logo"
-            width="100"
-            height="100"
-        >
-    </span>
+    <a href="index.html" class="logo">
+        <img src="Media/voya-logo.png" alt="VOYA Rail">
+    </a>
 
-    <div class="navlinks">
+    <nav class="navlinks">
 
-        <a class="active" href="index.html">
+        <a href="index.html" class="active">
             Home
         </a>
 
@@ -52,128 +49,123 @@
         </a>
 
         <a href="bookings.html">
-            My bookings
+            My Bookings
         </a>
 
         <a href="help.html">
             Help
         </a>
 
-    </div>
+    </nav>
 
     <div class="nav-actions">
 
-        <a
-            class="btn btn-outline"
-            href="login.html"
-        >
+        <a href="login.html" class="btn btn-outline">
             Login
         </a>
 
-        <a
-            class="btn btn-orange"
-            href="signup.html"
-        >
-            Sign up
+        <a href="signup.html" class="btn btn-orange">
+            Sign Up
         </a>
 
     </div>
 
-</div>
+</header>
 
 
-<!-- HERO -->
+<!-- =========================
+     HERO
+========================= -->
 
-<div class="hero">
+<main>
+
+<section class="hero">
 
     <div class="hero-inner">
 
         <span class="tag">
-            Est. on the rails
+            ✦ MODERN RAIL TRAVEL
         </span>
 
         <h1>
-            Book the line.<br>
-            Ride it your way.
+            Your journey<br>
+            starts here.
         </h1>
 
         <p>
-            Modern logistics meet the vintage romanticism of the rail.
-            Reliable, transparent, and built for the long haul.
+            Discover comfortable, reliable and unforgettable
+            rail journeys across the world's most beautiful routes.
         </p>
-
 
         <div class="hero-cards">
 
-            <div class="hero-card">
+            <article class="hero-card">
 
                 <span class="eyebrow">
-                    Business
+                    BUSINESS
                 </span>
 
                 <h3>
-                    Moving for work
+                    Travel smarter.
                 </h3>
 
                 <p>
-                    Priority Wi-Fi, quiet cars, and terminal lounges
-                    for the modern professional.
+                    Quiet cars, reliable Wi-Fi and comfortable
+                    spaces designed for productive journeys.
                 </p>
 
-                <a
-                    class="btn btn-orange"
-                    href="search.html"
-                >
+                <a href="search.html" class="btn btn-orange">
                     Book Business →
                 </a>
 
-            </div>
+            </article>
 
 
-            <div class="hero-card">
+            <article class="hero-card">
 
                 <span class="eyebrow">
-                    Leisure
+                    LEISURE
                 </span>
 
                 <h3>
-                    Going for the trip
+                    Enjoy the journey.
                 </h3>
 
                 <p>
-                    Sleeper cars, panoramic windows, and locally
-                    sourced onboard dining.
+                    Panoramic views, sleeper cabins and memorable
+                    journeys made for exploring.
                 </p>
 
-                <a
-                    class="btn btn-teal"
-                    href="search.html"
-                >
+                <a href="search.html" class="btn btn-teal">
                     Explore Leisure →
                 </a>
 
-            </div>
+            </article>
 
         </div>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- SEARCH BAR -->
+<!-- =========================
+     SEARCH
+========================= -->
 
-<div class="search-bar">
+<section class="search-bar">
 
     <div class="field">
 
-        <label>
+        <label for="from">
             From
         </label>
 
         <input
+            id="from"
             class="input"
-            placeholder="Origin Station"
+            type="text"
+            placeholder="Origin station"
         >
 
     </div>
@@ -181,12 +173,14 @@
 
     <div class="field">
 
-        <label>
+        <label for="to">
             To
         </label>
 
         <input
+            id="to"
             class="input"
+            type="text"
             placeholder="Destination"
         >
 
@@ -195,34 +189,36 @@
 
     <div class="field">
 
-        <label>
-            Travel Date
+        <label for="travel-date">
+            Travel date
         </label>
 
         <input
+            id="travel-date"
             class="input"
-            placeholder="mm/dd/yyyy"
+            type="date"
         >
 
     </div>
 
 
-    <div
-        class="field"
-        style="max-width:150px"
-    >
+    <div class="field">
 
-        <label>
+        <label for="travel-class">
             Class
         </label>
 
-        <select class="input">
+        <select id="travel-class" class="input">
 
-            <option>
+            <option value="economy">
                 Economy
             </option>
 
-            <option>
+            <option value="business">
+                Business
+            </option>
+
+            <option value="first">
                 First Class
             </option>
 
@@ -231,43 +227,39 @@
     </div>
 
 
-    <div
-        class="field"
-        style="flex:0 0 auto;justify-content:flex-end"
-    >
+    <div class="field search-action">
 
-        <label style="opacity:0">
-            Search
+        <label>
+            &nbsp;
         </label>
 
-        <a
-            class="btn btn-orange"
-            href="search.html"
-        >
-            🔍 Search lines
+        <a href="search.html" class="btn btn-orange">
+            🔍 Search
         </a>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- POPULAR ROUTES -->
+<!-- =========================
+     POPULAR ROUTES
+========================= -->
 
-<div class="section">
+<section class="section">
 
     <div class="eyebrow">
-        Popular routes
+        POPULAR ROUTES
     </div>
 
     <h2>
-        The world's most traveled lines
+        Explore the world's railway lines
     </h2>
-
 
     <div class="route-grid">
 
-        <div
+
+        <article
             class="route-card"
             style="background:linear-gradient(135deg,#1c3d63,#0E2038)"
         >
@@ -292,10 +284,10 @@
 
             </div>
 
-        </div>
+        </article>
 
 
-        <div
+        <article
             class="route-card"
             style="background:linear-gradient(135deg,#3a2f57,#0E2038)"
         >
@@ -320,10 +312,10 @@
 
             </div>
 
-        </div>
+        </article>
 
 
-        <div
+        <article
             class="route-card"
             style="background:linear-gradient(135deg,#5c2a4d,#1c1330)"
         >
@@ -348,10 +340,10 @@
 
             </div>
 
-        </div>
+        </article>
 
 
-        <div
+        <article
             class="route-card"
             style="background:linear-gradient(135deg,#0f4c5c,#0E2038)"
         >
@@ -376,286 +368,182 @@
 
             </div>
 
-        </div>
+        </article>
 
     </div>
 
+
+    <!-- PROMOTION -->
 
     <div class="promo-banner">
 
         <div>
 
             <h3>
-                Holiday getaway specials
+                Plan more. Spend less.
             </h3>
 
             <p>
-                Save up to 30% on multi-destination rail passes
-                when you book by December 15th. Perfect for
-                seasonal exploring.
+                Save up to 30% on selected multi-destination
+                rail journeys.
             </p>
 
         </div>
 
-        <a
-            class="btn btn-dark"
-            href="search.html"
-        >
-            Claim Offer
+        <a href="search.html" class="btn btn-dark">
+            Explore Offers
         </a>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- PERSONALIZED TRAVEL -->
+<!-- =========================
+     WHY VOYA
+========================= -->
 
-<div
-    class="section"
-    style="padding-top:0"
->
+<section class="section why-section">
 
     <div class="eyebrow">
-        Personalized travel
+        WHY VOYA
     </div>
 
     <h2>
-        Recommended for your journey
+        Travel differently.
     </h2>
-
 
     <div class="persona-grid">
 
 
-        <div class="persona-card">
+        <article class="persona-card">
 
             <div class="eyebrow">
-                Age band: 18-30
+                COMFORT
             </div>
 
-            <div class="persona-item">
+            <h3>
+                Designed around you.
+            </h3>
 
-                <div>
+            <p>
+                Comfortable seats, spacious cabins and thoughtful
+                amenities make every journey easier.
+            </p>
 
-                    <div class="name">
-                        Euro-Club Pass
-                    </div>
-
-                    <div class="sub">
-                        4 countries · 10 days
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $299
-                </span>
-
-            </div>
-
-
-            <div class="persona-item">
-
-                <div>
-
-                    <div class="name">
-                        South East Explorer
-                    </div>
-
-                    <div class="sub">
-                        Sleeper train pass
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $180
-                </span>
-
-            </div>
-
-
-            <a
-                class="btn btn-outline btn-block"
-                style="margin-top:14px"
-                href="search.html"
-            >
-                View All Young Adult
+            <a href="search.html" class="btn btn-outline">
+                Find a journey →
             </a>
 
-        </div>
+        </article>
 
 
-        <div class="persona-card">
+        <article class="persona-card">
 
             <div class="eyebrow">
-                Age band: 31-50
+                EXPERIENCE
             </div>
 
-            <div class="persona-item">
+            <h3>
+                The journey matters.
+            </h3>
 
-                <div>
+            <p>
+                Watch cities, countryside and landscapes pass by
+                while you enjoy the ride.
+            </p>
 
-                    <div class="name">
-                        Business Corridor
-                    </div>
-
-                    <div class="sub">
-                        Unlimited access · Regional
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $450
-                </span>
-
-            </div>
-
-
-            <div class="persona-item">
-
-                <div>
-
-                    <div class="name">
-                        Family Hub Pack
-                    </div>
-
-                    <div class="sub">
-                        4 passengers · Flexible
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $820
-                </span>
-
-            </div>
-
-
-            <a
-                class="btn btn-outline btn-block"
-                style="margin-top:14px"
-                href="search.html"
-            >
-                View All Professionals
+            <a href="destinations.html" class="btn btn-outline">
+                Explore destinations →
             </a>
 
-        </div>
+        </article>
 
 
-        <div class="persona-card">
+        <article class="persona-card">
 
             <div class="eyebrow">
-                Age band: 51-70
+                TRUST
             </div>
 
-            <div class="persona-item">
+            <h3>
+                Simple and transparent.
+            </h3>
 
-                <div>
+            <p>
+                Clear fares, secure payments and easy booking
+                from beginning to end.
+            </p>
 
-                    <div class="name">
-                        Continental Grand Tour
-                    </div>
-
-                    <div class="sub">
-                        1st class · 30 days
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $1,150
-                </span>
-
-            </div>
-
-
-            <div class="persona-item">
-
-                <div>
-
-                    <div class="name">
-                        Alpine Scenic Rail
-                    </div>
-
-                    <div class="sub">
-                        Panoramic car · Meals incl.
-                    </div>
-
-                </div>
-
-                <span class="price">
-                    $340
-                </span>
-
-            </div>
-
-
-            <a
-                class="btn btn-outline btn-block"
-                style="margin-top:14px"
-                href="search.html"
-            >
-                View All Classic Tour
+            <a href="help.html" class="btn btn-outline">
+                Learn more →
             </a>
 
-        </div>
+        </article>
 
     </div>
 
-</div>
+</section>
 
 
-<!-- TRUST -->
+<!-- =========================
+     TRUST
+========================= -->
 
-<div class="trust-row">
+<section class="trust-row">
 
     <div class="trust-item">
-        🛡 Secure Payments
+        🛡 Secure payments
     </div>
 
     <div class="trust-item">
-        🧾 Fare Transparency
+        🧾 Transparent fares
     </div>
 
     <div class="trust-item">
-        ⭐ Verified Reviews
+        ⭐ Verified journeys
     </div>
 
-</div>
+    <div class="trust-item">
+        🚆 Reliable rail travel
+    </div>
+
+</section>
+
+</main>
 
 
-<!-- FOOTER -->
+<!-- =========================
+     FOOTER
+========================= -->
 
-<div class="footer">
+<footer class="footer">
 
     <div class="footer-top">
 
+
         <div>
 
-            <span class="logo">
+            <a href="index.html" class="footer-brand">
 
                 <img
                     src="Media/voya-logo.png"
-                    alt="VOYA logo"
-                    width="100"
-                    height="100"
+                    alt="VOYA Rail"
                 >
 
-            </span>
+            </a>
 
             <p>
-                Riding the lines since 1924.
-                We connect the world through sustainable,
-                high-speed, and luxurious rail travel.
+                Connecting people and places through
+                comfortable, reliable and memorable
+                rail journeys.
             </p>
 
             <div class="footer-social">
+
                 <span>🔗</span>
                 <span>✉</span>
+
             </div>
 
         </div>
@@ -667,20 +555,16 @@
                 Travel
             </h4>
 
-            <a href="#">
-                Rail Networks
+            <a href="search.html">
+                Search trains
             </a>
 
-            <a href="#">
-                Route Maps
+            <a href="destinations.html">
+                Destinations
             </a>
 
-            <a href="#">
-                Station Guides
-            </a>
-
-            <a href="#">
-                Sustainability
+            <a href="bookings.html">
+                My bookings
             </a>
 
         </div>
@@ -692,20 +576,16 @@
                 Account
             </h4>
 
+            <a href="login.html">
+                Login
+            </a>
+
+            <a href="signup.html">
+                Create account
+            </a>
+
             <a href="bookings.html">
-                My Bookings
-            </a>
-
-            <a href="#">
-                LOKO Rewards
-            </a>
-
-            <a href="#">
-                Preferences
-            </a>
-
-            <a href="#">
-                Corporate Portal
+                My bookings
             </a>
 
         </div>
@@ -717,20 +597,20 @@
                 Support
             </h4>
 
-            <a href="#">
-                Contact Support
+            <a href="help.html">
+                Help centre
             </a>
 
             <a href="#">
-                Refund Policy
+                Refund policy
             </a>
 
             <a href="#">
-                Terms of Service
+                Terms of service
             </a>
 
             <a href="#">
-                Privacy Policy
+                Privacy policy
             </a>
 
         </div>
@@ -741,16 +621,19 @@
     <div class="footer-bottom">
 
         <span>
-            © 2026 LOKO Rail. All rights reserved.
+            © 2026 VOYA Rail. All rights reserved.
         </span>
 
         <span>
-            Ride the Line.
+            Ride the line.
         </span>
 
     </div>
-</div>
-</div>
+
+</footer>
+
+
 <script src="home.js"></script>
+
 </body>
 </html>

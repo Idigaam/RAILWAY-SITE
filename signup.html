@@ -3,48 +3,447 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOYA-signup</title>
+
+    <title>VOYA Rail — Sign Up</title>
+
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <!-- ============ SIGN UP ============ -->
-<div class="screen" id="signup">
-<div class="screen-label">Sign up</div>
-<div class="auth-topbar">
-   <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span>
-    <a class="btn btn-outline" href="index.html">Back to home</a>
-</div>
-<div class="auth-split">
-  <div class="auth-left">
-    <span class="tag">Ride the line</span>
-    <h2>Every ticket shows the full fare board — class, route, and price, no guessing.</h2>
-  </div>
-  <div class="auth-right">
-    <div class="auth-form-wrap">
-      <div class="toggle-pill"><span><a href="login.html" style="color:inherit">Log in</a></span><span class="active">Sign up</span></div>
-      <h1>Welcome to Voya</h1>
-      <div class="form-row">
-        <div class="form-group"><label>First name</label><input class="input" placeholder="Joe"></div>
-        <div class="form-group"><label>Last name</label><input class="input" placeholder="Mike"></div>
-      </div>
-      <div class="form-group"><label>Email address</label><input class="input" placeholder="you@email.com"></div>
-      <div class="form-group">
-        <label>Create password</label>
-        <div class="input-icon"><input class="input" type="password" placeholder="••••••••"><span class="icon">👁</span></div>
-      </div>
-      <div class="form-group">
-        <label>Confirm password</label>
-        <div class="input-icon"><input class="input" type="password" placeholder="••••••••"><span class="icon">👁</span></div>
-      </div>
-      <div class="tiny-terms"><input type="checkbox"><span>I agree to Voya's <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span></div>
-      <a class="btn btn-orange btn-block" href="bookings.html">Sign in</a>
-      <div class="divider">or continue with</div>
-      <div class="social-row"><span class="social-btn">G Google</span><span class="social-btn">🍎 Apple</span></div>
-      <div class="auth-foot">Already have an account? <a href="login.html">Log in</a></div>
-    </div>
-  </div>
-</div>
-</div>
-<script src="script.js"></script>
+
+<body class="auth-page">
+
+    <!-- =========================
+         SIGN UP HEADER
+    ========================= -->
+
+    <header class="auth-topbar">
+
+        <a href="index.html" class="auth-logo">
+            <img
+                src="Media/voya-logo.png"
+                alt="VOYA Rail"
+            >
+        </a>
+
+        <a href="index.html" class="btn btn-outline">
+            ← Back to home
+        </a>
+
+    </header>
+
+
+    <!-- =========================
+         SIGN UP CONTENT
+    ========================= -->
+
+    <main class="auth-split">
+
+
+        <!-- LEFT SIDE -->
+
+        <section class="auth-left">
+
+            <div class="auth-left-content">
+
+                <span class="tag">
+                    ✦ RIDE THE LINE
+                </span>
+
+                <h1>
+                    Start your
+                    journey with VOYA.
+                </h1>
+
+                <p>
+                    Create your VOYA account and make your next
+                    rail journey simple, comfortable and easy to manage.
+                </p>
+
+
+                <div class="auth-benefits">
+
+                    <div class="auth-benefit">
+
+                        <span class="benefit-icon">
+                            🚆
+                        </span>
+
+                        <div>
+                            <strong>
+                                Discover new routes
+                            </strong>
+
+                            <small>
+                                Explore destinations and rail journeys.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-benefit">
+
+                        <span class="benefit-icon">
+                            🎟
+                        </span>
+
+                        <div>
+                            <strong>
+                                Keep your bookings together
+                            </strong>
+
+                            <small>
+                                Access your journeys whenever you need them.
+                            </small>
+                        </div>
+
+                    </div>
+
+
+                    <div class="auth-benefit">
+
+                        <span class="benefit-icon">
+                            ✦
+                        </span>
+
+                        <div>
+                            <strong>
+                                Travel your way
+                            </strong>
+
+                            <small>
+                                Choose the class and journey that suit you.
+                            </small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- RIGHT SIDE -->
+
+        <section class="auth-right">
+
+            <div class="auth-form-wrap">
+
+
+                <!-- LOGIN / SIGNUP SWITCH -->
+
+                <div class="toggle-pill">
+
+                    <span>
+                        <a href="login.html">
+                            Log in
+                        </a>
+                    </span>
+
+                    <span class="active">
+                        Sign up
+                    </span>
+
+                </div>
+
+
+                <h2>
+                    Create your account
+                </h2>
+
+                <p class="auth-subtitle">
+                    Join VOYA and start planning your next journey.
+                </p>
+
+
+                <!-- NAME -->
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label for="firstName">
+                            First name
+                        </label>
+
+                        <input
+                            id="firstName"
+                            class="input"
+                            type="text"
+                            placeholder="Joe"
+                            autocomplete="given-name"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="lastName">
+                            Last name
+                        </label>
+
+                        <input
+                            id="lastName"
+                            class="input"
+                            type="text"
+                            placeholder="Mike"
+                            autocomplete="family-name"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="signupEmail">
+                        Email address
+                    </label>
+
+                    <input
+                        id="signupEmail"
+                        class="input"
+                        type="email"
+                        placeholder="you@email.com"
+                        autocomplete="email"
+                    >
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="createPassword">
+                        Create password
+                    </label>
+
+                    <div class="input-icon">
+
+                        <input
+                            id="createPassword"
+                            class="input"
+                            type="password"
+                            placeholder="Enter a password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            aria-label="Show password"
+                            onclick="togglePassword('createPassword', this)"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONFIRM PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="confirmPassword">
+                        Confirm password
+                    </label>
+
+                    <div class="input-icon">
+
+                        <input
+                            id="confirmPassword"
+                            class="input"
+                            type="password"
+                            placeholder="Confirm your password"
+                            autocomplete="new-password"
+                        >
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            aria-label="Show password"
+                            onclick="togglePassword('confirmPassword', this)"
+                        >
+                            👁
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TERMS -->
+
+                <div class="tiny-terms">
+
+                    <input
+                        type="checkbox"
+                        id="terms"
+                    >
+
+                    <label for="terms">
+
+                        I agree to VOYA's
+                        <a href="#">
+                            Terms of Service
+                        </a>
+                        and
+                        <a href="#">
+                            Privacy Policy
+                        </a>
+
+                    </label>
+
+                </div>
+
+
+                <!-- SIGN UP -->
+
+                <a
+                    href="bookings.html"
+                    class="btn btn-orange btn-block auth-login-btn"
+                >
+                    Create account
+                </a>
+
+
+                <!-- DIVIDER -->
+
+                <div class="divider">
+                    <span>or continue with</span>
+                </div>
+
+
+                <!-- SOCIAL LOGIN -->
+
+                <div class="social-row">
+
+
+                    <!-- GOOGLE -->
+
+                    <button
+                        class="social-btn"
+                        type="button"
+                    >
+
+                        <svg
+                            class="social-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                fill="#4285F4"
+                                d="M21.35 12.27c0-.68-.06-1.34-.17-1.97H12v3.73h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.15z"
+                            />
+
+                            <path
+                                fill="#34A853"
+                                d="M12 21.75c2.63 0 4.84-.87 6.45-2.33l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.52A9.75 9.75 0 0 0 12 21.75z"
+                            />
+
+                            <path
+                                fill="#FBBC05"
+                                d="M6.54 13.86A5.86 5.86 0 0 1 6.23 12c0-.65.11-1.28.31-1.86V7.62H3.29A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.04 4.38l3.25-2.52z"
+                            />
+
+                            <path
+                                fill="#EA4335"
+                                d="M12 6.11c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.18 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.71 5.37l3.25 2.52C7.31 7.83 9.46 6.11 12 6.11z"
+                            />
+
+                        </svg>
+
+                        <span>
+                            Google
+                        </span>
+
+                    </button>
+
+
+                    <!-- APPLE -->
+
+                    <button
+                        class="social-btn"
+                        type="button"
+                    >
+
+                        <svg
+                            class="social-icon apple-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="M17.05 12.54c-.02-2.01 1.64-2.98 1.71-3.02-.94-1.37-2.4-1.56-2.91-1.58-1.22-.13-2.4.73-3.02.73-.63 0-1.6-.72-2.63-.7-1.35.02-2.6.79-3.3 2.02-1.41 2.45-.36 6.05 1.01 8.03.67.97 1.46 2.06 2.5 2.02 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.57.65 2.63.63 1.09-.02 1.78-.98 2.44-1.95.77-1.12 1.08-2.2 1.1-2.25-.02-.01-2.12-.81-2.14-3.28z"
+                            />
+
+                            <path
+                                d="M15.03 6.63c.55-.67.92-1.6.82-2.53-.79.03-1.75.53-2.32 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.8-.45 2.34-1.12z"
+                            />
+
+                        </svg>
+
+                        <span>
+                            Apple
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- FOOTER -->
+
+                <div class="auth-foot">
+
+                    Already have an account?
+
+                    <a href="login.html">
+                        Log in
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        function togglePassword(inputId, button) {
+
+            const password =
+                document.getElementById(inputId);
+
+            if (password.type === "password") {
+
+                password.type = "text";
+
+                button.textContent = "🙈";
+
+            } else {
+
+                password.type = "password";
+
+                button.textContent = "👁";
+
+            }
+
+        }
+
+    </script>
+
 </body>
 </html>

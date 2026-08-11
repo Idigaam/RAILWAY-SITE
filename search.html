@@ -3,404 +3,1448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOYA - Search Trains</title>
+
+    <title>VOYA Rail — Search</title>
+
     <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* =========================================
+           VOYA SEARCH PAGE
+        ========================================= */
+
+        .search-page {
+            background: #FBF3E6;
+            min-height: 100vh;
+        }
+
+        /* NAVBAR */
+
+        .search-page .navbar {
+            min-height: 72px;
+            padding: 10px 48px;
+            background: #fff;
+            border-bottom: 1px solid #E6D9C3;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .search-page .logo {
+            width: 150px;
+            height: 55px;
+
+            display: flex;
+            align-items: center;
+
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .search-page .logo img {
+            width: 150px;
+            height: 55px;
+            object-fit: contain;
+            display: block;
+        }
+
+        .search-page .navlinks {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            flex: 1;
+        }
+
+        .search-page .navlinks a {
+            color: #1B1B1B;
+            font-size: 14px;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .search-page .navlinks a.active {
+            color: #E8622C;
+            border-bottom: 2px solid #E8622C;
+            padding-bottom: 5px;
+        }
+
+        .search-page .nav-actions {
+            display: flex;
+            gap: 10px;
+            flex-shrink: 0;
+        }
+
+
+        /* PAGE HEADER */
+
+        .search-header {
+            background: #0E2038;
+            color: white;
+            padding: 48px 48px 70px;
+        }
+
+        .search-header-inner {
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .search-header .eyebrow {
+            color: #14B8A1;
+            margin-bottom: 10px;
+        }
+
+        .search-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 36px;
+            line-height: 1.15;
+            margin: 0 0 10px;
+        }
+
+        .search-header p {
+            color: #C7D3E0;
+            font-size: 14px;
+            margin: 0;
+        }
+
+
+        /* SEARCH BOX */
+
+        .search-box {
+            max-width: 1100px;
+            margin: -38px auto 0;
+
+            background: #fff;
+            border: 1px solid #E6D9C3;
+            border-radius: 16px;
+
+            padding: 20px;
+
+            display: grid;
+            grid-template-columns: 1fr 1fr 180px 170px auto;
+            gap: 12px;
+
+            position: relative;
+            z-index: 5;
+
+            box-shadow: 0 12px 35px rgba(14, 32, 56, 0.14);
+        }
+
+        .search-box .field {
+            min-width: 0;
+        }
+
+        .search-box .input {
+            height: 44px;
+        }
+
+        .search-button {
+            height: 44px;
+            align-self: end;
+            white-space: nowrap;
+        }
+
+
+        /* RESULTS AREA */
+
+        .results-area {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 48px 32px 70px;
+        }
+
+        .results-heading {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+
+        .results-heading h2 {
+            margin: 0;
+            font-size: 27px;
+        }
+
+        .results-count {
+            font-size: 13px;
+            color: #6B7280;
+        }
+
+
+        /* RESULTS LAYOUT */
+
+        .results-layout {
+            display: grid;
+            grid-template-columns: 235px 1fr;
+            gap: 22px;
+            align-items: start;
+        }
+
+
+        /* FILTER */
+
+        .filter-box {
+            background: white;
+            border: 1px solid #E6D9C3;
+            border-radius: 14px;
+            padding: 20px;
+
+            position: sticky;
+            top: 20px;
+        }
+
+        .filter-box h3 {
+            margin: 0 0 20px;
+            font-size: 17px;
+        }
+
+        .filter-title {
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            color: #6B7280;
+
+            margin: 20px 0 9px;
+        }
+
+        .filter-option {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 7px 0;
+
+            font-size: 13px;
+            color: #1B1B1B;
+        }
+
+        .filter-option span:first-child {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .filter-option input {
+            accent-color: #E8622C;
+        }
+
+        .filter-option small {
+            color: #6B7280;
+        }
+
+        .filter-reset {
+            width: 100%;
+            margin-top: 18px;
+        }
+
+
+        /* TRAIN RESULTS */
+
+        .train-results {
+            min-width: 0;
+        }
+
+        .train-card {
+            background: white;
+            border: 1px solid #E6D9C3;
+            border-radius: 15px;
+
+            padding: 18px 20px;
+            margin-bottom: 14px;
+
+            display: grid;
+            grid-template-columns: 1fr 125px;
+            gap: 20px;
+
+            transition: .2s ease;
+        }
+
+        .train-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 9px 25px rgba(14, 32, 56, .08);
+        }
+
+        .train-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .train-route {
+            display: grid;
+            grid-template-columns: 115px minmax(90px, 1fr) 145px;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .train-time {
+            font-size: 21px;
+            font-weight: 700;
+            color: #0E2038;
+        }
+
+        .train-station {
+            margin-top: 4px;
+            font-size: 11px;
+            color: #6B7280;
+        }
+
+        .train-middle {
+            text-align: center;
+        }
+
+        .train-duration {
+            font-size: 11px;
+            color: #6B7280;
+            margin-bottom: 7px;
+        }
+
+        .train-line {
+            height: 2px;
+
+            background: repeating-linear-gradient(
+                90deg,
+                #E8622C 0 6px,
+                transparent 6px 12px
+            );
+
+            position: relative;
+        }
+
+        .train-line::before,
+        .train-line::after {
+            content: "";
+
+            width: 8px;
+            height: 8px;
+
+            background: #E8622C;
+
+            border-radius: 50%;
+
+            position: absolute;
+            top: 50%;
+
+            transform: translateY(-50%);
+        }
+
+        .train-line::before {
+            left: 0;
+        }
+
+        .train-line::after {
+            right: 0;
+        }
+
+        .train-info {
+            margin-top: 13px;
+            color: #6B7280;
+            font-size: 11.5px;
+        }
+
+        .train-price {
+            border-left: 1px solid #E6D9C3;
+            padding-left: 18px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: center;
+        }
+
+        .price-label {
+            font-size: 10px;
+            color: #6B7280;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+        }
+
+        .price-value {
+            font-size: 22px;
+            font-weight: 700;
+            color: #0E2038;
+            margin: 3px 0 10px;
+        }
+
+        .select-train {
+            padding: 8px 17px;
+            font-size: 12px;
+        }
+
+
+        /* LOAD MORE */
+
+        .load-more {
+            text-align: center;
+            margin-top: 28px;
+        }
+
+
+        /* FOOTER */
+
+        .search-footer {
+            background: #0E2038;
+            color: #B9C6D6;
+            padding: 40px 48px 20px;
+        }
+
+        .search-footer-inner {
+            max-width: 1200px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 30px;
+        }
+
+        .search-footer .logo {
+            margin-bottom: 12px;
+        }
+
+        .search-footer p {
+            max-width: 270px;
+            font-size: 12px;
+            line-height: 1.6;
+        }
+
+        .search-footer h4 {
+            color: white;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: .06em;
+            margin: 0 0 12px;
+        }
+
+        .search-footer a {
+            display: block;
+            color: #B9C6D6;
+            font-size: 12px;
+            margin-bottom: 9px;
+        }
+
+        .search-footer a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 25px auto 0;
+
+            padding-top: 16px;
+            border-top: 1px solid #23405E;
+
+            display: flex;
+            justify-content: space-between;
+
+            font-size: 11px;
+        }
+
+
+        /* TABLET */
+
+        @media (max-width: 1050px) {
+
+            .search-page .navbar {
+                padding: 10px 25px;
+            }
+
+            .search-page .navlinks {
+                gap: 17px;
+            }
+
+            .search-box {
+                margin-left: 25px;
+                margin-right: 25px;
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .search-button {
+                width: 100%;
+            }
+
+            .results-layout {
+                grid-template-columns: 200px 1fr;
+            }
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 760px) {
+
+            .search-page .navbar {
+                padding: 10px 18px;
+                flex-wrap: wrap;
+            }
+
+            .search-page .navlinks {
+                order: 3;
+                width: 100%;
+                overflow-x: auto;
+                justify-content: flex-start;
+                padding-bottom: 5px;
+            }
+
+            .search-page .nav-actions {
+                margin-left: auto;
+            }
+
+            .search-page .nav-actions .btn {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+
+            .search-header {
+                padding: 35px 20px 60px;
+            }
+
+            .search-header h1 {
+                font-size: 29px;
+            }
+
+            .search-box {
+                margin: -32px 16px 0;
+                grid-template-columns: 1fr;
+                padding: 16px;
+            }
+
+            .results-area {
+                padding: 35px 16px 50px;
+            }
+
+            .results-heading {
+                display: block;
+            }
+
+            .results-count {
+                margin-top: 6px;
+            }
+
+            .results-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-box {
+                position: static;
+            }
+
+            .train-card {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .train-route {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .train-middle {
+                text-align: left;
+            }
+
+            .train-price {
+                border-left: none;
+                border-top: 1px solid #E6D9C3;
+                padding: 14px 0 0;
+
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .price-value {
+                margin: 0 10px 0 0;
+            }
+
+            .search-footer {
+                padding: 35px 20px 18px;
+            }
+
+            .search-footer-inner {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="screen" id="search">
+<div class="search-page" id="search">
 
-    <div class="screen-label">Search</div>
 
-    <!-- NAVBAR -->
-    <div class="navbar">
+    <!-- =========================
+         NAVBAR
+    ========================== -->
 
-        <span class="logo">
-            <img src="Media/voya-logo.png" alt="VOYA Logo" width="100" height="100">
-        </span>
+    <nav class="navbar">
+
+        <a href="index.html" class="logo">
+            <img
+                src="Media/voya-logo.png"
+                alt="VOYA Rail"
+            >
+        </a>
 
         <div class="navlinks">
-            <a href="index.html">Home</a>
-            <a class="active" href="search.html">Search</a>
-            <a href="destinations.html">Destinations</a>
-            <a href="bookings.html">My bookings</a>
-            <a href="help.html">Help</a>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a class="active" href="search.html">
+                Search
+            </a>
+
+            <a href="destinations.html">
+                Destinations
+            </a>
+
+            <a href="bookings.html">
+                My bookings
+            </a>
+
+            <a href="help.html">
+                Help
+            </a>
+
         </div>
 
         <div class="nav-actions">
-            <a class="btn btn-outline" href="login.html">Login</a>
-            <a class="btn btn-orange" href="signup.html">Sign up</a>
+
+            <a
+                class="btn btn-outline"
+                href="login.html"
+            >
+                Login
+            </a>
+
+            <a
+                class="btn btn-orange"
+                href="signup.html"
+            >
+                Sign up
+            </a>
+
         </div>
+
+    </nav>
+
+
+    <!-- =========================
+         SEARCH HERO
+    ========================== -->
+
+    <section class="search-header">
+
+        <div class="search-header-inner">
+
+            <div class="eyebrow">
+                Find your journey
+            </div>
+
+            <h1>
+                Where will the rails<br>
+                take you?
+            </h1>
+
+            <p>
+                Search routes, compare fares and choose
+                the journey that works for you.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         SEARCH FORM
+    ========================== -->
+
+    <div class="search-box">
+
+        <div class="field">
+
+            <label>
+                From
+            </label>
+
+            <input
+                class="input"
+                id="origin"
+                type="text"
+                placeholder="Origin station"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                To
+            </label>
+
+            <input
+                class="input"
+                id="destination"
+                type="text"
+                placeholder="Destination"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Travel date
+            </label>
+
+            <input
+                class="input"
+                id="travelDate"
+                type="date"
+            >
+
+        </div>
+
+
+        <div class="field">
+
+            <label>
+                Class
+            </label>
+
+            <select
+                class="input"
+                id="travelClass"
+            >
+
+                <option>
+                    Economy
+                </option>
+
+                <option>
+                    Business
+                </option>
+
+                <option>
+                    First Class
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <button
+            class="btn btn-orange search-button"
+            id="searchBtn"
+            type="button"
+        >
+            🔍 Search trains
+        </button>
 
     </div>
 
 
-    <!-- SEARCH HEADER -->
-    <div class="section">
+    <!-- =========================
+         RESULTS
+    ========================== -->
 
-        <div class="eyebrow">Find your train</div>
+    <main class="results-area">
 
-        <h2>Search departures</h2>
 
-        <div class="search-bar">
-
-            <div class="field">
-                <label>From</label>
-                <input
-                    class="input"
-                    id="origin"
-                    placeholder="Origin Station"
-                >
-            </div>
-
-            <div class="field">
-                <label>To</label>
-                <input
-                    class="input"
-                    id="destination"
-                    placeholder="Destination"
-                >
-            </div>
-
-            <div class="field">
-                <label>Travel Date</label>
-                <input
-                    class="input"
-                    id="travelDate"
-                    type="date"
-                >
-            </div>
-
-            <div class="field">
-                <label>Class</label>
-
-                <select class="input" id="travelClass">
-                    <option>Economy</option>
-                    <option>Business</option>
-                    <option>First Class</option>
-                </select>
-            </div>
-
-            <div class="field">
-                <label style="opacity:0">Search</label>
-
-                <button
-                    class="btn btn-orange"
-                    id="searchBtn"
-                    type="button">
-                    🔍 Search
-                </button>
-            </div>
-
-        </div>
-
-    </div>
-
-
-    <!-- RESULTS -->
-    <div class="section">
-
-        <div class="eyebrow">Available departures</div>
-
-        <h2>Choose your train</h2>
-
-
-        <!-- TRAIN 1 -->
-        <div class="departure-card">
-
-            <div style="flex:1;min-width:260px">
-
-                <div class="badges">
-                    <span class="badge badge-business">BUSINESS</span>
-                    <span class="badge badge-economy">ECONOMY</span>
-                    <span class="badge badge-crypto">CRYPTO ACCEPTED</span>
-                </div>
-
-                <div class="dep-row">
-
-                    <div>
-                        <div class="dep-time">06:45</div>
-                        <div class="dep-station">New York Penn</div>
-                    </div>
-
-                    <div class="dep-mid">
-                        <div class="dep-dur">7h 20m</div>
-                        <div class="route-dots" style="width:100%"></div>
-                    </div>
-
-                    <div>
-                        <div class="dep-time">14:05</div>
-                        <div class="dep-station">London St Pancras</div>
-                    </div>
-
-                </div>
-
-                <div class="dep-info">
-                    ★ 4.8 (212 riders) · LOKO Rail Express · Direct
-                </div>
-
-            </div>
-
-            <div class="dep-price">
-
-                <div class="label">Price</div>
-
-                <div class="amount">$840</div>
-
-                <a
-                    class="btn btn-orange select-train"
-                    href="trip.html"
-                    data-time="06:45"
-                    data-arrival="14:05"
-                    data-duration="7h 20m"
-                    data-route="New York Penn → London St Pancras"
-                    data-price="840"
-                    data-class="Business">
-                    Select
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- TRAIN 2 -->
-        <div class="departure-card">
-
-            <div style="flex:1;min-width:260px">
-
-                <div class="badges">
-                    <span class="badge badge-first">FIRST CLASS</span>
-                    <span class="badge badge-business">BUSINESS</span>
-                </div>
-
-                <div class="dep-row">
-
-                    <div>
-                        <div class="dep-time">09:15</div>
-                        <div class="dep-station">New York Penn</div>
-                    </div>
-
-                    <div class="dep-mid">
-                        <div class="dep-dur">6h 45m</div>
-                        <div class="route-dots" style="width:100%"></div>
-                    </div>
-
-                    <div>
-                        <div class="dep-time">16:00</div>
-                        <div class="dep-station">London St Pancras</div>
-                    </div>
-
-                </div>
-
-                <div class="dep-info">
-                    ★ 4.8 (88 riders) · Bullet Line · Ultra Direct
-                </div>
-
-            </div>
-
-            <div class="dep-price">
-
-                <div class="label">Price</div>
-
-                <div class="amount">$1,420</div>
-
-                <a
-                    class="btn btn-orange select-train"
-                    href="trip.html"
-                    data-time="09:15"
-                    data-arrival="16:00"
-                    data-duration="6h 45m"
-                    data-route="New York Penn → London St Pancras"
-                    data-price="1420"
-                    data-class="First Class">
-                    Select
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- TRAIN 3 -->
-        <div class="departure-card">
-
-            <div style="flex:1;min-width:260px">
-
-                <div class="badges">
-                    <span class="badge badge-economy">ECONOMY</span>
-                </div>
-
-                <div class="dep-row">
-
-                    <div>
-                        <div class="dep-time">11:30</div>
-                        <div class="dep-station">New York Grand</div>
-                    </div>
-
-                    <div class="dep-mid">
-                        <div class="dep-dur">8h 10m</div>
-                        <div class="route-dots" style="width:100%"></div>
-                    </div>
-
-                    <div>
-                        <div class="dep-time">19:40</div>
-                        <div class="dep-station">London St Pancras</div>
-                    </div>
-
-                </div>
-
-                <div class="dep-info">
-                    ★ 4.8 (1,042 riders) · Atlantic Sleeper · 1 Stop
-                </div>
-
-            </div>
-
-            <div class="dep-price">
-
-                <div class="label">Price</div>
-
-                <div class="amount">$590</div>
-
-                <a
-                    class="btn btn-orange select-train"
-                    href="trip.html"
-                    data-time="11:30"
-                    data-arrival="19:40"
-                    data-duration="8h 10m"
-                    data-route="New York Grand → London St Pancras"
-                    data-price="590"
-                    data-class="Economy">
-                    Select
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <!-- TRAIN 4 -->
-        <div class="departure-card">
-
-            <div style="flex:1;min-width:260px">
-
-                <div class="badges">
-                    <span class="badge badge-limited">LIMITED SEATS</span>
-                    <span class="badge badge-business">BUSINESS</span>
-                </div>
-
-                <div class="dep-row">
-
-                    <div>
-                        <div class="dep-time">18:00</div>
-                        <div class="dep-station">New York Penn</div>
-                    </div>
-
-                    <div class="dep-mid">
-                        <div class="dep-dur">6h 30m</div>
-                        <div class="route-dots" style="width:100%"></div>
-                    </div>
-
-                    <div>
-                        <div class="dep-time">00:30</div>
-                        <div class="dep-station">London St Pancras</div>
-                    </div>
-
-                </div>
-
-                <div class="dep-info">
-                    ★ 4.8 (254 riders) · Bullet Line · Zuma Direct
-                </div>
-
-            </div>
-
-            <div class="dep-price">
-
-                <div class="label">Price</div>
-
-                <div class="amount">$2,374</div>
-
-                <a
-                    class="btn btn-orange select-train"
-                    href="trip.html"
-                    data-time="18:00"
-                    data-arrival="00:30"
-                    data-duration="6h 30m"
-                    data-route="New York Penn → London St Pancras"
-                    data-price="2374"
-                    data-class="Business">
-                    Select
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="center-btn">
-            <button class="btn btn-outline" id="loadMoreBtn">
-                Load more departures
-            </button>
-        </div>
-
-    </div>
-
-
-    <!-- FOOTER -->
-    <div class="footer">
-
-        <div class="footer-top">
+        <div class="results-heading">
 
             <div>
-                <span class="logo">
-                    <img src="Media/voya-logo.png" width="100" height="100">
-                </span>
+
+                <div class="eyebrow">
+                    Available departures
+                </div>
+
+                <h2>
+                    Choose your train
+                </h2>
+
+            </div>
+
+            <div class="results-count">
+                4 departures available
+            </div>
+
+        </div>
+
+
+        <div class="results-layout">
+
+
+            <!-- FILTER -->
+
+            <aside class="filter-box">
+
+                <h3>
+                    Filter results
+                </h3>
+
+
+                <div class="filter-title">
+                    Class
+                </div>
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Economy
+                    </span>
+
+                    <small>2</small>
+
+                </label>
+
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Business
+                    </span>
+
+                    <small>3</small>
+
+                </label>
+
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        First Class
+                    </span>
+
+                    <small>1</small>
+
+                </label>
+
+
+                <div class="filter-title">
+                    Departure
+                </div>
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Morning
+                    </span>
+
+                    <small>2</small>
+
+                </label>
+
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Afternoon
+                    </span>
+
+                    <small>1</small>
+
+                </label>
+
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Evening
+                    </span>
+
+                    <small>1</small>
+
+                </label>
+
+
+                <div class="filter-title">
+                    Journey
+                </div>
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        Direct
+                    </span>
+
+                </label>
+
+
+                <label class="filter-option">
+
+                    <span>
+                        <input type="checkbox">
+                        1 Stop
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="button"
+                    class="btn btn-outline filter-reset"
+                >
+                    Clear filters
+                </button>
+
+            </aside>
+
+
+            <!-- TRAIN LIST -->
+
+            <section class="train-results">
+
+
+                <!-- TRAIN 1 -->
+
+                <article class="train-card">
+
+                    <div>
+
+                        <div class="train-badges">
+
+                            <span class="badge badge-business">
+                                BUSINESS
+                            </span>
+
+                            <span class="badge badge-economy">
+                                ECONOMY
+                            </span>
+
+                            <span class="badge badge-crypto">
+                                CRYPTO ACCEPTED
+                            </span>
+
+                        </div>
+
+
+                        <div class="train-route">
+
+                            <div>
+
+                                <div class="train-time">
+                                    06:45
+                                </div>
+
+                                <div class="train-station">
+                                    New York Penn
+                                </div>
+
+                            </div>
+
+
+                            <div class="train-middle">
+
+                                <div class="train-duration">
+                                    7h 20m · Direct
+                                </div>
+
+                                <div class="train-line"></div>
+
+                            </div>
+
+
+                            <div>
+
+                                <div class="train-time">
+                                    14:05
+                                </div>
+
+                                <div class="train-station">
+                                    London St Pancras
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="train-info">
+                            ★ 4.8 (212 riders) · LOKO Rail Express · Direct
+                        </div>
+
+                    </div>
+
+
+                    <div class="train-price">
+
+                        <div class="price-label">
+                            From
+                        </div>
+
+                        <div class="price-value">
+                            $840
+                        </div>
+
+                        <a
+                            class="btn btn-orange select-train"
+                            href="trip.html"
+                            data-time="06:45"
+                            data-arrival="14:05"
+                            data-duration="7h 20m"
+                            data-route="New York Penn → London St Pancras"
+                            data-price="840"
+                            data-class="Business"
+                        >
+                            Select
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TRAIN 2 -->
+
+                <article class="train-card">
+
+                    <div>
+
+                        <div class="train-badges">
+
+                            <span class="badge badge-first">
+                                FIRST CLASS
+                            </span>
+
+                            <span class="badge badge-business">
+                                BUSINESS
+                            </span>
+
+                        </div>
+
+
+                        <div class="train-route">
+
+                            <div>
+
+                                <div class="train-time">
+                                    09:15
+                                </div>
+
+                                <div class="train-station">
+                                    New York Penn
+                                </div>
+
+                            </div>
+
+
+                            <div class="train-middle">
+
+                                <div class="train-duration">
+                                    6h 45m · Direct
+                                </div>
+
+                                <div class="train-line"></div>
+
+                            </div>
+
+
+                            <div>
+
+                                <div class="train-time">
+                                    16:00
+                                </div>
+
+                                <div class="train-station">
+                                    London St Pancras
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="train-info">
+                            ★ 4.8 (88 riders) · Bullet Line · Ultra Direct
+                        </div>
+
+                    </div>
+
+
+                    <div class="train-price">
+
+                        <div class="price-label">
+                            From
+                        </div>
+
+                        <div class="price-value">
+                            $1,420
+                        </div>
+
+                        <a
+                            class="btn btn-orange select-train"
+                            href="trip.html"
+                            data-time="09:15"
+                            data-arrival="16:00"
+                            data-duration="6h 45m"
+                            data-route="New York Penn → London St Pancras"
+                            data-price="1420"
+                            data-class="First Class"
+                        >
+                            Select
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TRAIN 3 -->
+
+                <article class="train-card">
+
+                    <div>
+
+                        <div class="train-badges">
+
+                            <span class="badge badge-economy">
+                                ECONOMY
+                            </span>
+
+                        </div>
+
+
+                        <div class="train-route">
+
+                            <div>
+
+                                <div class="train-time">
+                                    11:30
+                                </div>
+
+                                <div class="train-station">
+                                    New York Grand
+                                </div>
+
+                            </div>
+
+
+                            <div class="train-middle">
+
+                                <div class="train-duration">
+                                    8h 10m · 1 Stop
+                                </div>
+
+                                <div class="train-line"></div>
+
+                            </div>
+
+
+                            <div>
+
+                                <div class="train-time">
+                                    19:40
+                                </div>
+
+                                <div class="train-station">
+                                    London St Pancras
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="train-info">
+                            ★ 4.8 (1,042 riders) · Atlantic Sleeper · 1 Stop
+                        </div>
+
+                    </div>
+
+
+                    <div class="train-price">
+
+                        <div class="price-label">
+                            From
+                        </div>
+
+                        <div class="price-value">
+                            $590
+                        </div>
+
+                        <a
+                            class="btn btn-orange select-train"
+                            href="trip.html"
+                            data-time="11:30"
+                            data-arrival="19:40"
+                            data-duration="8h 10m"
+                            data-route="New York Grand → London St Pancras"
+                            data-price="590"
+                            data-class="Economy"
+                        >
+                            Select
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- TRAIN 4 -->
+
+                <article class="train-card">
+
+                    <div>
+
+                        <div class="train-badges">
+
+                            <span class="badge badge-limited">
+                                LIMITED SEATS
+                            </span>
+
+                            <span class="badge badge-business">
+                                BUSINESS
+                            </span>
+
+                        </div>
+
+
+                        <div class="train-route">
+
+                            <div>
+
+                                <div class="train-time">
+                                    18:00
+                                </div>
+
+                                <div class="train-station">
+                                    New York Penn
+                                </div>
+
+                            </div>
+
+
+                            <div class="train-middle">
+
+                                <div class="train-duration">
+                                    6h 30m · Direct
+                                </div>
+
+                                <div class="train-line"></div>
+
+                            </div>
+
+
+                            <div>
+
+                                <div class="train-time">
+                                    00:30
+                                </div>
+
+                                <div class="train-station">
+                                    London St Pancras
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="train-info">
+                            ★ 4.8 (254 riders) · Bullet Line · Zuma Direct
+                        </div>
+
+                    </div>
+
+
+                    <div class="train-price">
+
+                        <div class="price-label">
+                            From
+                        </div>
+
+                        <div class="price-value">
+                            $2,374
+                        </div>
+
+                        <a
+                            class="btn btn-orange select-train"
+                            href="trip.html"
+                            data-time="18:00"
+                            data-arrival="00:30"
+                            data-duration="6h 30m"
+                            data-route="New York Penn → London St Pancras"
+                            data-price="2374"
+                            data-class="Business"
+                        >
+                            Select
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <div class="load-more">
+
+                    <button
+                        class="btn btn-outline"
+                        id="loadMoreBtn"
+                        type="button"
+                    >
+                        Load more departures
+                    </button>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer class="search-footer">
+
+        <div class="search-footer-inner">
+
+
+            <div>
+
+                <a href="index.html" class="logo">
+
+                    <img
+                        src="Media/voya-logo.png"
+                        alt="VOYA Rail"
+                    >
+
+                </a>
 
                 <p>
                     Riding the lines since 1924.
                     We connect the world through sustainable,
-                    high-speed, and luxurious rail travel.
+                    high-speed and luxurious rail travel.
                 </p>
+
             </div>
 
-            <div class="footer-col">
-                <h4>Travel</h4>
-                <a href="destinations.html">Rail Networks</a>
-                <a href="destinations.html">Route Maps</a>
-                <a href="destinations.html">Station Guides</a>
-                <a href="destinations.html">Sustainability</a>
+
+            <div>
+
+                <h4>
+                    Travel
+                </h4>
+
+                <a href="destinations.html">
+                    Rail Networks
+                </a>
+
+                <a href="destinations.html">
+                    Route Maps
+                </a>
+
+                <a href="destinations.html">
+                    Station Guides
+                </a>
+
+                <a href="destinations.html">
+                    Sustainability
+                </a>
+
             </div>
 
-            <div class="footer-col">
-                <h4>Account</h4>
-                <a href="bookings.html">My Bookings</a>
-                <a href="#">LOKO Rewards</a>
-                <a href="#">Preferences</a>
-                <a href="#">Corporate Portal</a>
+
+            <div>
+
+                <h4>
+                    Account
+                </h4>
+
+                <a href="bookings.html">
+                    My Bookings
+                </a>
+
+                <a href="#">
+                    LOKO Rewards
+                </a>
+
+                <a href="#">
+                    Preferences
+                </a>
+
+                <a href="#">
+                    Corporate Portal
+                </a>
+
             </div>
 
-            <div class="footer-col">
-                <h4>Support</h4>
-                <a href="help.html">Contact Support</a>
-                <a href="help.html">Refund Policy</a>
-                <a href="help.html">Terms of Service</a>
-                <a href="help.html">Privacy Policy</a>
+
+            <div>
+
+                <h4>
+                    Support
+                </h4>
+
+                <a href="help.html">
+                    Contact Support
+                </a>
+
+                <a href="help.html">
+                    Refund Policy
+                </a>
+
+                <a href="help.html">
+                    Terms of Service
+                </a>
+
+                <a href="help.html">
+                    Privacy Policy
+                </a>
+
             </div>
 
         </div>
+
 
         <div class="footer-bottom">
-            <span>© 2026 LOKO Rail. All rights reserved.</span>
-            <span>Ride the Line.</span>
+
+            <span>
+                © 2026 VOYA Rail. All rights reserved.
+            </span>
+
+            <span>
+                Ride the Line.
+            </span>
+
         </div>
 
-    </div>
+    </footer>
 
 </div>
 
-<!-- IMPORTANT: search.js must be in the same folder as search.html -->
-<script src="search.js"></script>
 
+<!-- KEEP YOUR EXISTING JAVASCRIPT -->
+
+<script src="search.js"></script>
+<script src="auth.js"></script>
 </body>
 </html>
