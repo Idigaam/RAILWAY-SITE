@@ -1,0 +1,395 @@
+/* =========================================
+   VOYA LOGO — FINAL
+========================================= */
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+
+    width: fit-content;
+    height: 42px;
+
+    flex-shrink: 0;
+
+    text-decoration: none;
+    color: #081536;
+}
+
+
+/* =========================================
+   LOGO ICON
+========================================= */
+
+.logo-icon {
+    position: relative;
+
+    width: 36px;
+    height: 36px;
+
+    flex: 0 0 36px;
+
+    display: block;
+
+    background: #ff604f;
+
+    border-radius: 9px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   TRAIN WINDOWS
+========================================= */
+
+.logo-window {
+    position: absolute;
+
+    top: 8px;
+
+    width: 8px;
+    height: 8px;
+
+    background: #ffffff;
+
+    border-radius: 2px;
+
+    z-index: 2;
+}
+
+.window-one {
+    left: 7px;
+}
+
+.window-two {
+    right: 7px;
+}
+
+
+/* =========================================
+   TRAIN BODY
+========================================= */
+
+.logo-icon::after {
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+    right: 6px;
+    bottom: 7px;
+
+    height: 8px;
+
+    background: #ffffff;
+
+    border-radius: 2px 2px 3px 3px;
+
+    z-index: 1;
+}
+
+
+/* =========================================
+   TRAIN WHEELS
+========================================= */
+
+.logo-wheel {
+    position: absolute;
+
+    bottom: 4px;
+
+    width: 6px;
+    height: 6px;
+
+    background: #ff604f;
+
+    border: 2px solid #ffffff;
+
+    border-radius: 50%;
+
+    z-index: 3;
+}
+
+.wheel-one {
+    left: 7px;
+}
+
+.wheel-two {
+    right: 7px;
+}
+
+
+/* =========================================
+   VOYA WORDMARK
+========================================= */
+
+.logo-text {
+    display: inline-block;
+
+    margin: 0;
+    padding: 0;
+
+    color: #081536;
+
+    font-size: 30px;
+    line-height: 1;
+
+    font-weight: 700;
+
+    letter-spacing: -1.4px;
+
+    white-space: nowrap;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* =========================================
+   NAVBAR LOGO
+========================================= */
+
+.navbar .logo {
+    min-width: 0;
+}
+
+.navbar .logo-icon {
+    width: 36px;
+    height: 36px;
+    flex-basis: 36px;
+}
+
+.navbar .logo-text {
+    color: #081536;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   FOOTER LOGO
+========================================= */
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    height: 42px;
+}
+
+.footer-logo .logo-text {
+    color: #ffffff;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.footer-logo .logo-icon {
+    width: 36px;
+    height: 36px;
+
+    flex-basis: 36px;
+}
+
+
+/* =========================================
+   LOGO HOVER
+========================================= */
+
+.logo:hover .logo-text {
+    color: #ff604f;
+}
+
+.footer-logo:hover .logo-text {
+    color: #ff7667;
+}
+
+.logo:hover .logo-icon {
+    transform: translateY(-1px);
+}
+
+.logo-icon {
+    transition: transform 0.2s ease;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+
+    .logo {
+        gap: 9px;
+    }
+
+    .logo-icon {
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+    }
+
+    .logo-text {
+        font-size: 28px;
+    }
+
+    .logo-window {
+        width: 7px;
+        height: 7px;
+
+        top: 7px;
+    }
+
+    .window-one {
+        left: 7px;
+    }
+
+    .window-two {
+        right: 7px;
+    }
+
+    .logo-wheel {
+        width: 5px;
+        height: 5px;
+
+        bottom: 4px;
+    }
+
+    .wheel-one {
+        left: 7px;
+    }
+
+    .wheel-two {
+        right: 7px;
+    }
+
+    .navbar .logo-text {
+        font-size: 28px;
+    }
+
+    .navbar .logo-icon,
+    .footer-logo .logo-icon {
+        width: 34px;
+        height: 34px;
+
+        flex-basis: 34px;
+    }
+
+    .footer-logo .logo-text {
+        font-size: 28px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+    .logo {
+        gap: 8px;
+        height: 38px;
+    }
+
+    .logo-icon {
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+
+        border-radius: 8px;
+    }
+
+    .logo-text {
+        font-size: 25px;
+        letter-spacing: -1px;
+    }
+
+    .logo-window {
+        width: 6px;
+        height: 6px;
+
+        top: 6px;
+    }
+
+    .window-one {
+        left: 6px;
+    }
+
+    .window-two {
+        right: 6px;
+    }
+
+    .logo-wheel {
+        width: 4px;
+        height: 4px;
+
+        bottom: 3px;
+
+        border-width: 2px;
+    }
+
+    .wheel-one {
+        left: 6px;
+    }
+
+    .wheel-two {
+        right: 6px;
+    }
+
+    .navbar .logo-text {
+        font-size: 25px;
+    }
+
+    .navbar .logo-icon,
+    .footer-logo .logo-icon {
+        width: 30px;
+        height: 30px;
+
+        flex-basis: 30px;
+    }
+
+    .footer-logo .logo-text {
+        font-size: 25px;
+    }
+}
+
+
+/* =========================================
+   SMALL PHONES
+========================================= */
+
+@media (max-width: 400px) {
+
+    .logo {
+        gap: 7px;
+    }
+
+    .logo-icon {
+        width: 28px;
+        height: 28px;
+
+        flex-basis: 28px;
+    }
+
+    .logo-text {
+        font-size: 23px;
+    }
+
+    .navbar .logo-text,
+    .footer-logo .logo-text {
+        font-size: 23px;
+    }
+
+    .navbar .logo-icon,
+    .footer-logo .logo-icon {
+        width: 28px;
+        height: 28px;
+
+        flex-basis: 28px;
+    }
+}

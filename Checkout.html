@@ -7,70 +7,98 @@
 
     <title>VOYA - Checkout</title>
 
+    <!-- Global styles -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Checkout styles -->
+    <link rel="stylesheet" href="css/checkout.css">
 </head>
 
 <body>
 
-    <!-- ============ CHECKOUT ============ -->
+<div class="screen" id="checkout">
 
-    <div class="screen" id="checkout">
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
 
-        <div class="screen-label">Checkout</div>
+    <header class="checkout-navbar">
 
-        <!-- NAVBAR -->
-        <div class="navbar">
+        <a href="index.html" class="checkout-logo">
+            <img
+                src="Media/voya-logo.png"
+                alt="VOYA"
+            >
+        </a>
 
-            <span class="logo">
-                <img
-                    src="Media/voya-logo.png"
-                    alt="VOYA logo"
-                    width="100"
-                    height="100"
-                >
-            </span>
+        <a href="index.html" class="back-home">
+            Back to home
+        </a>
 
-            <a class="btn btn-outline" href="index.html">
-                Back to home
-            </a>
-
-        </div>
+    </header>
 
 
-        <!-- CHECKOUT INTRO -->
-        <div class="section" style="padding-bottom:0">
+    <!-- =========================================
+         INTRO
+    ========================================== -->
+
+    <main>
+
+        <section class="checkout-intro">
 
             <div class="breadcrumb">
+
                 <span class="active">01 Trip</span>
-                /
+
+                <span>/</span>
+
                 <span class="active">02 Traveler details</span>
-                /
+
+                <span>/</span>
+
                 <span>03 Payment</span>
-                /
+
+                <span>/</span>
+
                 <span>04 Confirmation</span>
+
             </div>
 
-            <h2 style="margin-bottom:2px">
-                Complete your booking
-            </h2>
 
-            <p style="color:var(--muted);margin-top:0;margin-bottom:24px">
+            <h1>Complete your booking</h1>
+
+            <p
+                class="checkout-subtitle"
+                id="checkoutSubtitle"
+            >
                 New York → London · Sat, 14 Nov · Economy
             </p>
 
-        </div>
+        </section>
 
 
-        <!-- CHECKOUT GRID -->
-        <div class="checkout-grid">
+        <!-- =====================================
+             CHECKOUT GRID
+        ====================================== -->
 
-            <!-- ================= LEFT SIDE ================= -->
-            <div>
+        <section class="checkout-grid">
+
+
+            <!-- =================================
+                 LEFT COLUMN
+            ================================== -->
+
+            <div class="checkout-left">
+
 
                 <!-- TRAVELER DETAILS -->
-                <div class="card-box">
 
-                    <h4>Traveler details</h4>
+                <section class="checkout-card">
+
+                    <div class="card-title">
+                        TRAVELER DETAILS
+                    </div>
+
 
                     <div class="form-row">
 
@@ -85,6 +113,7 @@
                                 type="text"
                                 id="firstName"
                                 placeholder="Esther"
+                                autocomplete="given-name"
                             >
 
                         </div>
@@ -101,6 +130,7 @@
                                 type="text"
                                 id="lastName"
                                 placeholder="Tochukwu"
+                                autocomplete="family-name"
                             >
 
                         </div>
@@ -121,6 +151,7 @@
                                 type="email"
                                 id="email"
                                 placeholder="you@email.com"
+                                autocomplete="email"
                             >
 
                         </div>
@@ -137,6 +168,7 @@
                                 type="tel"
                                 id="phone"
                                 placeholder="+234"
+                                autocomplete="tel"
                             >
 
                         </div>
@@ -144,7 +176,7 @@
                     </div>
 
 
-                    <div class="form-group">
+                    <div class="form-group age-group">
 
                         <label for="ageCategory">
                             Age category
@@ -155,15 +187,15 @@
                             id="ageCategory"
                         >
 
-                            <option>
+                            <option value="Young people (18-30)">
                                 Young people (18-30)
                             </option>
 
-                            <option>
+                            <option value="Adults (31-50)">
                                 Adults (31-50)
                             </option>
 
-                            <option>
+                            <option value="Seniors (51-70)">
                                 Seniors (51-70)
                             </option>
 
@@ -171,90 +203,149 @@
 
                     </div>
 
-                </div>
+                </section>
 
 
-                <!-- ================= PAYMENT ================= -->
-                <div class="card-box">
 
-                    <h4>Payment method</h4>
+                <!-- PAYMENT -->
+
+                <section class="checkout-card payment-card">
+
+                    <div class="card-title">
+                        PAYMENT METHOD
+                    </div>
 
 
-                    <!-- PAYMENT OPTIONS -->
                     <div class="payment-grid">
 
-                        <!-- CREDIT CARD -->
-                        <div
+
+                        <!-- CARD -->
+
+                        <button
+                            type="button"
                             class="payment-option selected"
                             data-payment="card"
                         >
 
-                            <div>
-                                Credit card
-                            </div>
+                            <span class="payment-icon">
+                                ▣
+                            </span>
 
-                            <div class="sub">
-                                Visa, Mastercard
-                            </div>
+                            <span class="payment-content">
 
-                        </div>
+                                <strong>
+                                    Credit card
+                                </strong>
+
+                                <small>
+                                    Visa, Mastercard
+                                </small>
+
+                            </span>
+
+                        </button>
 
 
-                        <!-- BANK TRANSFER -->
-                        <div
+                        <!-- BANK -->
+
+                        <button
+                            type="button"
                             class="payment-option"
                             data-payment="bank"
                         >
 
-                            <div>
-                                Bank transfer
-                            </div>
+                            <span class="payment-icon">
+                                ♜
+                            </span>
 
-                            <div class="sub">
-                                1-2 day confirm
-                            </div>
+                            <span class="payment-content">
 
-                        </div>
+                                <strong>
+                                    Bank transfer
+                                </strong>
+
+                                <small>
+                                    1-2 day confirm
+                                </small>
+
+                            </span>
+
+                        </button>
 
 
                         <!-- PAYPAL -->
-                        <div
+
+                        <button
+                            type="button"
                             class="payment-option"
                             data-payment="paypal"
                         >
 
-                            <div>
-                                PayPal
-                            </div>
+                            <span class="payment-icon">
+                                ▣
+                            </span>
 
-                            <div class="sub">
-                                Instant
-                            </div>
+                            <span class="payment-content">
 
-                        </div>
+                                <strong>
+                                    PayPal
+                                </strong>
+
+                                <small>
+                                    Instant
+                                </small>
+
+                            </span>
+
+                        </button>
 
 
                         <!-- CRYPTO -->
-                        <div
+
+                        <button
+                            type="button"
                             class="payment-option"
                             data-payment="crypto"
                         >
 
-                            <div>
-                                Crypto
-                            </div>
+                            <span class="payment-icon">
+                                ₿
+                            </span>
 
-                            <div class="sub">
-                                Premium riders
-                            </div>
+                            <span class="payment-content">
 
-                        </div>
+                                <strong>
+                                    Crypto
+                                </strong>
+
+                                <small>
+                                    Premium riders
+                                </small>
+
+                            </span>
+
+                        </button>
 
                     </div>
 
 
-                    <!-- ================= CREDIT CARD ================= -->
-                    <div id="cardPayment">
+                    <!-- CARD PAYMENT -->
+
+                    <div
+                        id="cardPayment"
+                        class="payment-panel"
+                    >
+
+                        <div class="crypto-note">
+
+                            <span>ⓘ</span>
+
+                            <span>
+                                Crypto checkout is popular with our First Class riders and settled on-chain, confirmed in minutes.
+                            </span>
+
+                        </div>
+
 
                         <div class="form-row">
 
@@ -269,6 +360,8 @@
                                     type="text"
                                     id="cardNumber"
                                     placeholder="•••• •••• •••• 4242"
+                                    inputmode="numeric"
+                                    autocomplete="cc-number"
                                 >
 
                             </div>
@@ -285,6 +378,7 @@
                                     type="text"
                                     id="expiry"
                                     placeholder="MM / YY"
+                                    autocomplete="cc-exp"
                                 >
 
                             </div>
@@ -294,27 +388,24 @@
                     </div>
 
 
-                    <!-- ================= BANK TRANSFER ================= -->
+                    <!-- BANK -->
+
                     <div
                         id="bankPayment"
-                        style="display:none;"
+                        class="payment-panel payment-info-wrapper"
+                        style="display: none;"
                     >
 
                         <div class="payment-info">
 
-                            <h4>
-                                Bank transfer
-                            </h4>
+                            <h3>Bank transfer</h3>
 
                             <p>
-                                Transfer the total amount to the
-                                VOYA Rail account shown after you
-                                continue.
+                                Transfer the total amount to the VOYA Rail account shown after you continue.
                             </p>
 
                             <p>
-                                Your booking will be confirmed
-                                after payment is verified.
+                                Your booking will be confirmed after payment is verified.
                             </p>
 
                         </div>
@@ -322,21 +413,20 @@
                     </div>
 
 
-                    <!-- ================= PAYPAL ================= -->
+                    <!-- PAYPAL -->
+
                     <div
                         id="paypalPayment"
-                        style="display:none;"
+                        class="payment-panel payment-info-wrapper"
+                        style="display: none;"
                     >
 
                         <div class="payment-info">
 
-                            <h4>
-                                PayPal
-                            </h4>
+                            <h3>PayPal</h3>
 
                             <p>
-                                You will be redirected to PayPal
-                                to complete your payment.
+                                You will be redirected to PayPal to complete your payment.
                             </p>
 
                         </div>
@@ -344,188 +434,174 @@
                     </div>
 
 
-                    <!-- ================= CRYPTO ================= -->
+                    <!-- CRYPTO -->
+
                     <div
                         id="cryptoPayment"
-                        style="display:none;"
+                        class="payment-panel payment-info-wrapper"
+                        style="display: none;"
                     >
 
                         <div class="payment-info">
 
-                            <h4>
-                                Crypto payment
-                            </h4>
+                            <h3>Crypto payment</h3>
 
                             <p>
-                                Crypto payment instructions will
-                                be displayed after you continue.
+                                Crypto payment instructions will be displayed after you continue.
                             </p>
 
                         </div>
 
                     </div>
 
-                </div>
+                </section>
 
             </div>
 
 
-            <!-- ================= RIGHT SIDE ================= -->
-            <div>
 
-                <!-- ORDER SUMMARY -->
-                <div class="card-box">
+            <!-- =================================
+                 RIGHT COLUMN
+            ================================== -->
 
-                    <h4>
+            <aside class="checkout-right">
+
+                <section class="checkout-card order-summary">
+
+                    <h2>
                         Order summary
-                    </h4>
+                    </h2>
 
 
-                    <div class="mini-route">
-                        NYC → LON
+                    <div class="route-display">
+
+                        <span id="summaryOrigin">
+                            NYC
+                        </span>
+
+                        <span class="route-line">
+                            <span></span>
+                            <i>◆</i>
+                            <span></span>
+                        </span>
+
+                        <span id="summaryDestination">
+                            LON
+                        </span>
+
                     </div>
 
 
-                    <div class="mini-meta">
+                    <div
+                        class="mini-meta"
+                        id="summaryMeta"
+                    >
                         Sat, 14 Nov · Economy · 1 traveler
                     </div>
 
 
-                    <div class="fare-total-row">
+                    <div class="fare-row">
 
                         <span>
                             Fare
                         </span>
 
-                        <span>
+                        <strong id="summaryFare">
                             $840.00
-                        </span>
+                        </strong>
 
                     </div>
 
 
-                    <div class="fare-total-row">
+                    <div class="fare-row">
 
                         <span>
                             Booking fee
                         </span>
 
-                        <span style="color:var(--teal-2)">
-                            Free
-                        </span>
+                        <strong class="free">
+                            FREE
+                        </strong>
 
                     </div>
 
 
-                    <div class="fare-total-row total">
+                    <div class="fare-total">
 
                         <span>
                             Total amount
                         </span>
 
-                        <span>
+                        <strong id="summaryTotal">
                             $840.00
-                        </span>
+                        </strong>
 
                     </div>
 
 
-                    <!-- CONFIRM PAY -->
-                    <a
-                        class="btn btn-orange btn-block"
+                    <button
+                        type="button"
+                        class="confirm-button"
                         id="confirmPayBtn"
-                        style="margin-top:14px"
-                        href="#"
                     >
                         Confirm pay
-                    </a>
+                    </button>
 
 
-                    <div class="cancel-note">
+                    <p class="cancel-note">
 
-                        By continuing you agree to Voya's
+                        By continuing you agree to VOYA's
                         fare &amp; cancellation terms.
 
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- ================= FOOTER ================= -->
-        <div class="footer">
-
-            <div class="footer-top">
-
-                <div>
-
-                    <span class="logo">
-
-                        <img
-                            src="Media/voya-logo.png"
-                            alt="VOYA logo"
-                            width="100"
-                            height="100"
-                        >
-
-                    </span>
-
-                    <p>
-                        Riding the lines since 1924.
                     </p>
 
-                </div>
+                </section>
+
+            </aside>
+
+        </section>
+
+    </main>
 
 
-                <div class="footer-col">
 
-                    <h4>
-                        Travel
-                    </h4>
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
 
-                    <a href="#">
-                        Rail Networks
+    <footer class="checkout-footer">
+
+        <div class="footer-content">
+
+
+            <div class="footer-brand">
+
+                <a
+                    href="index.html"
+                    class="footer-logo"
+                >
+
+                    <img
+                        src="Media/voya-logo.png"
+                        alt="VOYA"
+                    >
+
+                </a>
+
+
+                <p>
+                    Riding the lines since 1924. We connect the world through sustainable, high-speed, and luxurious rail travel.
+                </p>
+
+
+                <div class="social-links">
+
+                    <a href="#" aria-label="Facebook">
+                        f
                     </a>
 
-                    <a href="#">
-                        Route Maps
-                    </a>
-
-                </div>
-
-
-                <div class="footer-col">
-
-                    <h4>
-                        Account
-                    </h4>
-
-                    <a href="bookings.html">
-                        My Bookings
-                    </a>
-
-                    <a href="#">
-                        Preferences
-                    </a>
-
-                </div>
-
-
-                <div class="footer-col">
-
-                    <h4>
-                        Support
-                    </h4>
-
-                    <a href="#">
-                        Contact Support
-                    </a>
-
-                    <a href="#">
-                        Privacy Policy
+                    <a href="#" aria-label="Instagram">
+                        ◎
                     </a>
 
                 </div>
@@ -533,25 +609,105 @@
             </div>
 
 
-            <div class="footer-bottom">
 
-                <span>
-                    © 2026 VOYA Rail. All rights reserved.
-                </span>
+            <div class="footer-column">
 
-                <span>
-                    Ride the Line.
-                </span>
+                <h3>
+                    TRAVEL
+                </h3>
+
+                <a href="#">
+                    Rail Networks
+                </a>
+
+                <a href="#">
+                    Route Maps
+                </a>
+
+                <a href="#">
+                    Station Guides
+                </a>
+
+                <a href="#">
+                    Sustainability
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    ACCOUNT
+                </h3>
+
+                <a href="bookings.html">
+                    My Bookings
+                </a>
+
+                <a href="#">
+                    LOKO Rewards
+                </a>
+
+                <a href="#">
+                    Preferences
+                </a>
+
+                <a href="#">
+                    Corporate Portal
+                </a>
+
+            </div>
+
+
+
+            <div class="footer-column">
+
+                <h3>
+                    SUPPORT
+                </h3>
+
+                <a href="#">
+                    Contact Support
+                </a>
+
+                <a href="#">
+                    Refund Policy
+                </a>
+
+                <a href="#">
+                    Terms of Service
+                </a>
+
+                <a href="#">
+                    Privacy Policy
+                </a>
 
             </div>
 
         </div>
 
-    </div>
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 VOYA Rail. All rights reserved.
+            </span>
+
+            <span>
+                Ride the Line.
+            </span>
+
+        </div>
+
+    </footer>
+
+</div>
 
 
-    <!-- CHECKOUT JAVASCRIPT -->
-    <script src="checkout.js"></script>
-    <script src="auth.js"></script>
+<!-- Checkout JavaScript -->
+<script src="js/checkout.js"></script>
+
 </body>
 </html>

@@ -1,165 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>VOYA Rail — Login</title>
 
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/login.css">
 </head>
+
 
 <body class="auth-page">
 
-    <!-- =========================
-         LOGIN HEADER
-    ========================= -->
+
+    <!-- =====================================================
+         TOP HEADER
+    ====================================================== -->
 
     <header class="auth-topbar">
 
-        <a href="index.html" class="auth-logo">
+        <a
+            href="index.html"
+            class="auth-logo"
+            aria-label="VOYA Rail home"
+        >
+
             <img
                 src="Media/voya-logo.png"
                 alt="VOYA Rail"
             >
+
         </a>
 
-        <a href="index.html" class="btn btn-outline">
-            ← Back to home
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+            Back to home
         </a>
 
     </header>
 
 
-    <!-- =========================
-         LOGIN CONTENT
-    ========================= -->
 
-    <main class="auth-split">
+    <!-- =====================================================
+         AUTHENTICATION AREA
+    ====================================================== -->
+
+    <main class="auth-layout">
 
 
-        <!-- LEFT SIDE -->
+        <!-- =================================================
+             LEFT HERO
+        ================================================== -->
 
-        <section class="auth-left">
+        <section class="auth-hero">
 
-            <div class="auth-left-content">
+            <div class="auth-hero-overlay"></div>
 
-                <span class="tag">
-                    ✦ RIDE THE LINE
+
+            <div class="auth-hero-content">
+
+
+                <span class="hero-tag">
+                    RIDE THE LINE
                 </span>
 
+
                 <h1>
-                    Your journey
-                    starts with VOYA.
+                    Every ticket shows the
+                    full fare board — class,
+                    route, and price, no
+                    guessing.
                 </h1>
 
-                <p>
-                    Sign in to manage your journeys, view your
-                    bookings and discover your next destination.
-                </p>
-
-
-                <div class="auth-benefits">
-
-                    <div class="auth-benefit">
-
-                        <span class="benefit-icon">
-                            🚆
-                        </span>
-
-                        <div>
-                            <strong>
-                                Easy booking
-                            </strong>
-
-                            <small>
-                                Find and book your next rail journey.
-                            </small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="auth-benefit">
-
-                        <span class="benefit-icon">
-                            🎟
-                        </span>
-
-                        <div>
-                            <strong>
-                                Manage your tickets
-                            </strong>
-
-                            <small>
-                                Keep your journeys together in one place.
-                            </small>
-                        </div>
-
-                    </div>
-
-
-                    <div class="auth-benefit">
-
-                        <span class="benefit-icon">
-                            🔒
-                        </span>
-
-                        <div>
-                            <strong>
-                                Secure travel
-                            </strong>
-
-                            <small>
-                                Your account and payments are protected.
-                            </small>
-                        </div>
-
-                    </div>
-
-                </div>
 
             </div>
 
         </section>
 
 
-        <!-- RIGHT SIDE -->
 
-        <section class="auth-right">
+        <!-- =================================================
+             RIGHT LOGIN
+        ================================================== -->
 
-            <div class="auth-form-wrap">
+        <section class="auth-panel">
+
+            <div class="auth-form">
 
 
-                <!-- LOGIN / SIGNUP SWITCH -->
+                <!-- LOGIN / SIGN UP -->
 
-                <div class="toggle-pill">
+                <div class="auth-switch">
 
-                    <span class="active">
+                    <a
+                        href="login.html"
+                        class="switch-item active"
+                    >
                         Log in
-                    </span>
+                    </a>
 
-                    <span>
-                        <a href="signup.html">
-                            Sign up
-                        </a>
-                    </span>
+
+                    <a
+                        href="signup.html"
+                        class="switch-item"
+                    >
+                        Sign up
+                    </a>
 
                 </div>
 
+
+
+                <!-- TITLE -->
 
                 <h2>
                     Welcome back
                 </h2>
 
-                <p class="auth-subtitle">
-                    Log in to continue your journey.
-                </p>
 
 
                 <!-- EMAIL -->
 
-                <div class="form-group">
+                <div class="field">
 
                     <label for="email">
                         Email address
@@ -167,40 +137,55 @@
 
                     <input
                         id="email"
-                        class="input"
                         type="email"
-                        placeholder="you@email.com"
+                        placeholder="you@gmail.com"
                         autocomplete="email"
                     >
 
                 </div>
 
 
+
                 <!-- PASSWORD -->
 
-                <div class="form-group">
+                <div class="field">
 
                     <label for="password">
                         Password
                     </label>
 
-                    <div class="input-icon">
+
+                    <div class="password-field">
 
                         <input
                             id="password"
-                            class="input"
                             type="password"
-                            placeholder="Enter your password"
+                            placeholder="••••••••"
                             autocomplete="current-password"
                         >
+
 
                         <button
                             type="button"
                             class="password-toggle"
+                            id="passwordToggle"
                             aria-label="Show password"
-                            onclick="togglePassword()"
                         >
-                            👁
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z"
+                                />
+
+                                <circle
+                                    cx="12"
+                                    cy="12"
+                                    r="2.5"
+                                />
+                            </svg>
+
                         </button>
 
                     </div>
@@ -208,14 +193,23 @@
                 </div>
 
 
+
                 <!-- OPTIONS -->
 
-                <div class="check-row">
+                <div class="auth-options">
 
-                    <label>
-                        <input type="checkbox">
-                        Stay signed in
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                        >
+
+                        <span>
+                            Stay signed in
+                        </span>
+
                     </label>
+
 
                     <a href="#">
                         Forgot password?
@@ -224,85 +218,121 @@
                 </div>
 
 
-                <!-- LOGIN -->
 
-                <a
-                    href="bookings.html"
-                    class="btn btn-orange btn-block auth-login-btn"
+                <!-- LOGIN BUTTON -->
+
+                <button
+                    type="button"
+                    id="loginBtn"
+                    class="primary-button"
                 >
                     Log in
-                </a>
+                </button>
+
 
 
                 <!-- DIVIDER -->
 
-                <div class="divider">
-                    <span>or continue with</span>
+                <div class="auth-divider">
+
+                    <span></span>
+
+                    <p>
+                        OR CONTINUE WITH
+                    </p>
+
+                    <span></span>
+
                 </div>
+
 
 
                 <!-- SOCIAL -->
 
-               <div class="social-row">
-
-    <!-- GOOGLE -->
-    <button class="social-btn" type="button">
-
-        <svg
-            class="social-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-        >
-            <path
-                fill="#4285F4"
-                d="M21.35 12.27c0-.68-.06-1.34-.17-1.97H12v3.73h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.15z"
-            />
-            <path
-                fill="#34A853"
-                d="M12 21.75c2.63 0 4.84-.87 6.45-2.33l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.52A9.75 9.75 0 0 0 12 21.75z"
-            />
-            <path
-                fill="#FBBC05"
-                d="M6.54 13.86A5.86 5.86 0 0 1 6.23 12c0-.65.11-1.28.31-1.86V7.62H3.29A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.04 4.38l3.25-2.52z"
-            />
-            <path
-                fill="#EA4335"
-                d="M12 6.11c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.18 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.71 5.37l3.25 2.52C7.31 7.83 9.46 6.11 12 6.11z"
-            />
-        </svg>
-
-        <span>Google</span>
-
-    </button>
+                <div class="social-buttons">
 
 
-    <!-- APPLE -->
-    <button class="social-btn" type="button">
+                    <!-- GOOGLE -->
 
-        <svg
-            class="social-icon apple-icon"
-            viewBox="0 0 24 24"
-            aria-hidden="true"
-        >
-            <path
-                d="M17.05 12.54c-.02-2.01 1.64-2.98 1.71-3.02-.94-1.37-2.4-1.56-2.91-1.58-1.22-.13-2.4.73-3.02.73-.63 0-1.6-.72-2.63-.7-1.35.02-2.6.79-3.3 2.02-1.41 2.45-.36 6.05 1.01 8.03.67.97 1.46 2.06 2.5 2.02 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.57.65 2.63.63 1.09-.02 1.78-.98 2.44-1.95.77-1.12 1.08-2.2 1.1-2.25-.02-.01-2.12-.81-2.14-3.28z"
-            />
+                    <button
+                        type="button"
+                        class="social-button"
+                    >
 
-            <path
-                d="M15.03 6.63c.55-.67.92-1.6.82-2.53-.79.03-1.75.53-2.32 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.8-.45 2.34-1.12z"
-            />
-        </svg>
+                        <svg
+                            class="google-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
 
-        <span>Apple</span>
+                            <path
+                                fill="#4285F4"
+                                d="M21.35 12.27c0-.68-.06-1.34-.17-1.97H12v3.73h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.69 2.91-4.18 2.91-7.15z"
+                            />
 
-    </button>
+                            <path
+                                fill="#34A853"
+                                d="M12 21.75c2.63 0 4.84-.87 6.45-2.33l-3.14-2.45c-.87.58-1.98.92-3.31.92-2.54 0-4.69-1.72-5.46-4.03H3.29v2.52A9.75 9.75 0 0 0 12 21.75z"
+                            />
 
-</div>
+                            <path
+                                fill="#FBBC05"
+                                d="M6.54 13.86A5.86 5.86 0 0 1 6.23 12c0-.65.11-1.28.31-1.86V7.62H3.29A9.75 9.75 0 0 0 2.25 12c0 1.57.38 3.06 1.04 4.38l3.25-2.52z"
+                            />
+
+                            <path
+                                fill="#EA4335"
+                                d="M12 6.11c1.43 0 2.71.49 3.72 1.45l2.79-2.79C16.84 3.18 14.63 2.25 12 2.25a9.75 9.75 0 0 0-8.71 5.37l3.25 2.52C7.31 7.83 9.46 6.11 12 6.11z"
+                            />
+
+                        </svg>
+
+
+                        <span>
+                            Google
+                        </span>
+
+                    </button>
+
+
+
+                    <!-- APPLE -->
+
+                    <button
+                        type="button"
+                        class="social-button"
+                    >
+
+                        <svg
+                            class="apple-icon"
+                            viewBox="0 0 24 24"
+                            aria-hidden="true"
+                        >
+
+                            <path
+                                d="M17.05 12.54c-.02-2.01 1.64-2.98 1.71-3.02-.94-1.37-2.4-1.56-2.91-1.58-1.22-.13-2.4.73-3.02.73-.63 0-1.6-.72-2.63-.7-1.35.02-2.6.79-3.3 2.02-1.41 2.45-.36 6.05 1.01 8.03.67.97 1.46 2.06 2.5 2.02 1.01-.04 1.39-.65 2.61-.65 1.22 0 1.57.65 2.63.63 1.09-.02 1.78-.98 2.44-1.95.77-1.12 1.08-2.2 1.1-2.25-.02-.01-2.12-.81-2.14-3.28z"
+                            />
+
+                            <path
+                                d="M15.03 6.63c.55-.67.92-1.6.82-2.53-.79.03-1.75.53-2.32 1.2-.51.59-.96 1.54-.84 2.45.89.07 1.8-.45 2.34-1.12z"
+                            />
+
+                        </svg>
+
+
+                        <span>
+                            Apple
+                        </span>
+
+                    </button>
+
+                </div>
+
 
 
                 <!-- FOOTER -->
 
-                <div class="auth-foot">
+                <p class="auth-footer">
 
                     New to VOYA?
 
@@ -310,7 +340,8 @@
                         Create an account
                     </a>
 
-                </div>
+                </p>
+
 
             </div>
 
@@ -319,33 +350,9 @@
     </main>
 
 
-    <script>
 
-        function togglePassword() {
-
-            const password =
-                document.getElementById("password");
-
-            const button =
-                document.querySelector(".password-toggle");
-
-            if (password.type === "password") {
-
-                password.type = "text";
-
-                button.textContent = "🙈";
-
-            } else {
-
-                password.type = "password";
-
-                button.textContent = "👁";
-
-            }
-
-        }
-
-    </script>
+    <script src="js/login.js"></script>
 
 </body>
+
 </html>

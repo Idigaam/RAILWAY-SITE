@@ -3,81 +3,538 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VOYA - Trip Details</title>
-    <link rel="stylesheet" href="styles.css">
+
+    <title>VOYA — Trip Details</title>
+
+    <link rel="stylesheet" href="css/trip.css">
 </head>
+
 <body>
-    <!-- ============ TRIP DETAILS ============ -->
-<div class="screen" id="trip">
-<div class="screen-label">Trip Details</div>
-<div class="trip-hero">
-  <a class="back-link" href="search.html">← Back to results</a>
-  <div class="trip-rating">
-    <span class="badge badge-first">BUSINESS</span>
-    <span class="stars-inline">★ 4.8 · 212 riders rated this trip</span>
-  </div>
-  <div class="trip-route-lg">New York → London</div>
-  <div class="trip-meta">Sat, 14 Nov 2026 · Departs 08:40 · Arrives 14:10 · 5h 30m</div>
-</div>
-<div class="trip-body">
-  <div>
-    <div class="card-box">
-      <h4>Choose your class</h4>
-      <div class="class-options">
-        <div class="class-card selected"><span class="class-check">✓</span><h5>Economy</h5><p>Standard seat, 1 bag</p><div class="price">$840</div></div>
-        <div class="class-card"><h5>First Class</h5><p>Wide seat, lounge access, meal</p><div class="price">$2,193</div></div>
-      </div>
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+<header class="navbar">
+    <div class="nav-container">
+
+    <a href="index.html" class="logo">
+       <img src="Media/voya-logo.png" alt="VOYA Rail">
+    </a>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="search.html">Search</a>
+            <a href="destinations.html">Destinations</a>
+            <a href="bookings.html">My Bookings</a>
+            <a href="help.html">Help</a>
+        </nav>
+
     </div>
-    <div class="card-box">
-      <h4>Ticket details</h4>
-      <div class="ticket-row"><span>Base fare</span><span class="amt">$649</span></div>
-      <div class="ticket-row"><span>Departure city surcharge</span><span class="amt">$120</span></div>
-      <div class="ticket-row"><span>Seasonal demand</span><span class="amt">$80</span></div>
-      <div class="ticket-row total"><span>Total</span><span>$840</span></div>
+</header>
+
+
+<!-- =====================================================
+     TRIP HERO
+===================================================== -->
+
+<section class="trip-hero">
+
+    <div class="container">
+
+        <a href="search.html" class="back-link">
+            ← Back to results
+        </a>
+
+        <div class="trip-top">
+
+            <div class="trip-left">
+
+                <div class="trip-badges">
+                    <span class="business-badge">BUSINESS</span>
+
+                    <span class="rating">
+                        ★
+                    </span>
+
+                    <span class="rating-number">
+                        4.8
+                    </span>
+
+                    <span class="rating-text">
+                        Excellent
+                    </span>
+                </div>
+
+                <h1 id="routeTitle">
+                    New York → London
+                </h1>
+
+                <p id="tripMeta">
+                    Sat, 14 Nov 2026 · Departs 08:40 · Arrives 14:10 · 5h 30m
+                </p>
+
+            </div>
+
+        </div>
+
     </div>
-    <div class="card-box">
-      <h4>Route &amp; stops</h4>
-      <div class="timeline">
-        <div class="timeline-item"><div class="timeline-time">08:40</div><div class="timeline-station">New York</div><div class="timeline-sub">Penn Central Station</div></div>
-        <div class="timeline-item stop"><div class="timeline-time">11:05</div><div class="timeline-station">Transit — Boston Union</div><div class="timeline-sub">8 min scheduled stop</div></div>
-        <div class="timeline-item"><div class="timeline-time">14:10</div><div class="timeline-station">London</div><div class="timeline-sub">St Pancras International</div></div>
-      </div>
+
+</section>
+
+
+<!-- =====================================================
+     MAIN CONTENT
+===================================================== -->
+
+<main class="main-section">
+
+    <div class="container trip-grid">
+
+        <!-- =================================================
+             LEFT CONTENT
+        ================================================== -->
+
+        <section class="trip-main">
+
+            <!-- CHOOSE CLASS -->
+
+            <section class="class-section">
+
+                <div class="section-label">
+                    CHOOSE YOUR CLASS
+                </div>
+
+                <div class="class-options">
+
+                    <!-- ECONOMY -->
+
+                    <button
+                        type="button"
+                        class="class-card selected"
+                        data-class="Economy"
+                    >
+
+                        <span class="selected-check">✓</span>
+
+                        <h2>Economy</h2>
+
+                        <p>
+                            Standard seat, 1 bag
+                        </p>
+
+                        <strong>
+                            $840
+                        </strong>
+
+                    </button>
+
+
+                    <!-- FIRST CLASS -->
+
+                    <button
+                        type="button"
+                        class="class-card"
+                        data-class="First Class"
+                    >
+
+                        <span class="selected-check hidden">✓</span>
+
+                        <h2>First Class</h2>
+
+                        <p>
+                            Wide seat, lounge access, meal
+                        </p>
+
+                        <strong>
+                            $2,193
+                        </strong>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 TICKET DETAILS
+            ================================================== -->
+
+            <section class="white-card ticket-card">
+
+                <div class="card-label">
+                    TICKET DETAILS
+                </div>
+
+                <div class="ticket-row">
+
+                    <span>Base fare</span>
+
+                    <span
+                        class="amount"
+                        id="baseFare"
+                    >
+                        $640
+                    </span>
+
+                </div>
+
+                <div class="ticket-row">
+
+                    <span>
+                        Departure city surcharge
+                    </span>
+
+                    <span
+                        class="amount"
+                        id="citySurcharge"
+                    >
+                        $120
+                    </span>
+
+                </div>
+
+                <div class="ticket-row">
+
+                    <span>
+                        Seasonal demand
+                    </span>
+
+                    <span
+                        class="amount"
+                        id="seasonalDemand"
+                    >
+                        $80
+                    </span>
+
+                </div>
+
+                <div class="ticket-total">
+
+                    <span>Total</span>
+
+                    <strong id="ticketTotal">
+                        $840
+                    </strong>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 ROUTE & STOPS
+            ================================================== -->
+
+            <section class="white-card route-card">
+
+                <div class="card-label">
+                    ROUTE &amp; STOPS
+                </div>
+
+                <div class="timeline">
+
+                    <!-- DEPARTURE -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-time">
+                            08:40
+                        </div>
+
+                        <div class="timeline-info">
+
+                            <h3 id="departureCity">
+                                New York
+                            </h3>
+
+                            <p>
+                                Penn Central Station
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- STOP -->
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-time">
+                            11:05
+                        </div>
+
+                        <div class="timeline-info">
+
+                            <h3>
+                                Transit — Boston Union
+                            </h3>
+
+                            <p>
+                                8 min scheduled stop
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ARRIVAL -->
+
+                    <div class="timeline-item last">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-time">
+                            14:10
+                        </div>
+
+                        <div class="timeline-info">
+
+                            <h3 id="destinationCity">
+                                London
+                            </h3>
+
+                            <p>
+                                St Pancras International
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 WHAT'S INCLUDED
+            ================================================== -->
+
+            <section class="white-card included-card">
+
+                <div class="card-label">
+                    WHAT'S INCLUDED
+                </div>
+
+                <div class="included-grid">
+
+                    <div class="included-item">
+                        <span class="included-icon">⚡</span>
+                        <span>Personal power outlet</span>
+                    </div>
+
+                    <div class="included-item">
+                        <span class="included-icon">▣</span>
+                        <span>High-speed Wi-Fi</span>
+                    </div>
+
+                    <div class="included-item">
+                        <span class="included-icon">▤</span>
+                        <span>Ergonomic reclining seat</span>
+                    </div>
+
+                    <div class="included-item">
+                        <span class="included-icon">▰</span>
+                        <span>Carry-on luggage (max 10kg)</span>
+                    </div>
+
+                    <div class="included-item">
+                        <span class="included-icon">☕</span>
+                        <span>Onboard cafe access</span>
+                    </div>
+
+                    <div class="included-item">
+                        <span class="included-icon">▥</span>
+                        <span>Digital entertainment system</span>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- =================================================
+             RIGHT SIDEBAR
+        ================================================== -->
+
+        <aside class="fare-sidebar">
+
+            <div class="fare-card">
+
+                <h2>
+                    Fare summary
+                </h2>
+
+                <p
+                    class="fare-route"
+                    id="fareRoute"
+                >
+                    New York → London · Economy
+                </p>
+
+
+                <div class="fare-row">
+
+                    <span>
+                        1 traveler
+                    </span>
+
+                    <strong id="travelerPrice">
+                        $840
+                    </strong>
+
+                </div>
+
+
+                <div class="fare-row">
+
+                    <span>
+                        Booking fee
+                    </span>
+
+                    <strong>
+                        $0
+                    </strong>
+
+                </div>
+
+
+                <div class="fare-divider"></div>
+
+
+                <div class="fare-total">
+
+                    <span>
+                        Total
+                    </span>
+
+                    <strong id="fareTotal">
+                        $840
+                    </strong>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="continue-button"
+                    id="continueButton"
+                >
+                    Continue to booking
+                </button>
+
+
+                <div class="cancellation">
+
+                    <span class="info-icon">ⓘ</span>
+
+                    <span>
+                        Free cancellation up to 48 hours before departure
+                    </span>
+
+                </div>
+
+            </div>
+
+        </aside>
+
     </div>
-    <div class="card-box">
-      <h4>What's included</h4>
-      <div class="included-grid">
-        <div class="included-item">🔌 Personal power outlet</div>
-        <div class="included-item">📶 High-speed Wi-Fi</div>
-        <div class="included-item">💺 Ergonomic reclining seat</div>
-        <div class="included-item">🧳 Carry-on luggage (max 10kg)</div>
-        <div class="included-item">☕ Onboard cafe access</div>
-        <div class="included-item">🖥 Digital entertainment system</div>
-      </div>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <div class="footer-brand">
+
+            <a href="index.html" class="footer-logo">
+                <span class="logo-icon">▣</span>
+                <span>Voya</span>
+            </a>
+
+            <p>
+                Riding the lines since 1924. We connect the world through
+                sustainable, high-speed, and luxurious rail travel.
+            </p>
+
+            <div class="social-links">
+                <a href="#">‹</a>
+                <a href="#">◎</a>
+            </div>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>TRAVEL</h3>
+
+            <a href="#">Rail Networks</a>
+            <a href="#">Route Maps</a>
+            <a href="#">Station Guides</a>
+            <a href="#">Sustainability</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>ACCOUNT</h3>
+
+            <a href="bookings.html">My Bookings</a>
+            <a href="#">LOKO Rewards</a>
+            <a href="#">Preferences</a>
+            <a href="#">Corporate Portal</a>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>SUPPORT</h3>
+
+            <a href="help.html">Contact Support</a>
+            <a href="#">Refund Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Privacy Policy</a>
+
+        </div>
+
     </div>
-  </div>
-  <div>
-    <div class="card-box">
-      <h4>Fare summary</h4>
-      <div style="font-size:13px;color:var(--muted);margin-bottom:8px">New York → London · Economy</div>
-      <div class="fare-total-row"><span>1 traveler</span><span>$840</span></div>
-      <div class="fare-total-row"><span>Booking fee</span><span>$0</span></div>
-      <div class="fare-total-row total"><span>Total</span><span>$840</span></div>
-      <a class="btn btn-orange btn-block" style="margin-top:14px" href="checkout.html">Continue to booking</a>
-      <div class="cancel-note">Free cancellation up to 48 hours before departure</div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 VOYA Rail. All rights reserved.
+        </span>
+
+        <span>
+            Ride the Line.
+        </span>
+
     </div>
-  </div>
-</div>
-<div class="footer">
-  <div class="footer-top">
-    <div> <span class="logo"><img src="Media/voya-logo.png" alt="image description" width="100" height="100"></span><p>Riding the lines since 1924.</p></div>
-    <div class="footer-col"><h4>Travel</h4><a href="#">Rail Networks</a><a href="#">Route Maps</a></div>
-    <div class="footer-col"><h4>Account</h4><a href="#bookings">My Bookings</a><a href="#">Preferences</a></div>
-    <div class="footer-col"><h4>Support</h4><a href="#">Contact Support</a><a href="#">Privacy Policy</a></div>
-  </div>
-  <div class="footer-bottom"><span>© 2026 LOKO Rail. All rights reserved.</span><span>Ride the Line.</span></div>
-</div>
-</div>
-<script src="trip.js"></script>
-<script src="auth.js"></script>
+
+</footer>
+
+
+<script src="js/trip.js"></script>
+
 </body>
 </html>

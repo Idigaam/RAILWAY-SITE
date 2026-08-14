@@ -1,0 +1,1722 @@
+/* =========================================================
+   VOYA HOME PAGE
+   Complete home.css
+   ========================================================= */
+
+
+/* =========================================================
+   ROUTE TICKER
+========================================================= */
+
+.route-ticker {
+    height: 40px;
+    width: 100%;
+
+    background: #071331;
+    color: #ffffff;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+}
+
+.ticker-track {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    min-width: max-content;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    letter-spacing: 2.2px;
+
+    animation: tickerMove 35s linear infinite;
+}
+
+.ticker-track span {
+    display: inline-flex;
+    align-items: center;
+}
+
+.ticker-track b {
+    margin-left: 8px;
+    font-size: 14px;
+}
+
+.ticker-track i {
+    color: #ff604f;
+
+    font-size: 20px;
+    font-style: normal;
+}
+
+@keyframes tickerMove {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.navbar {
+    width: 100%;
+    height: 86px;
+
+    background: #faf7f0;
+
+    position: relative;
+    z-index: 50;
+
+    border-bottom: 1px solid rgba(8, 21, 54, 0.05);
+}
+
+.nav-container {
+    width: min(1120px, 92%);
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   VOYA LOGO
+========================================================= */
+
+.nav-container .logo {
+    position: absolute;
+    left: 0;
+
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    height: 42px;
+
+    text-decoration: none;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 10px;
+
+    height: 42px;
+
+    text-decoration: none;
+}
+
+
+/* Coral square */
+
+.logo-icon {
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 7px);
+    grid-template-rows: repeat(2, 7px);
+
+    align-content: center;
+    justify-content: center;
+
+    gap: 4px;
+
+    background: #ff604f;
+
+    border-radius: 8px;
+
+    box-sizing: border-box;
+}
+
+
+/* Four white windows */
+
+.logo-icon span {
+    width: 7px;
+    height: 7px;
+
+    display: block;
+
+    background: #ffffff;
+
+    border-radius: 2px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Voya text */
+
+.logo-text {
+    display: inline-block;
+
+    color: #091636;
+
+    font-size: 28px;
+    font-weight: 700;
+
+    line-height: 1;
+
+    letter-spacing: -1.2px;
+
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 42px;
+}
+
+.nav-links a {
+    position: relative;
+
+    color: #091636;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    padding: 31px 0;
+
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff5b4c;
+}
+
+.nav-links a.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+
+    bottom: 21px;
+
+    width: 100%;
+    height: 2px;
+
+    background: #ff5b4c;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 720px;
+
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(4, 13, 35, 0.72),
+            rgba(4, 23, 65, 0.78),
+            rgba(6, 47, 111, 0.90)
+        ),
+        url("../media/hero-train.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    color: #ffffff;
+
+    padding: 60px 0 120px;
+
+    overflow: visible;
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 50% 70%,
+            rgba(20, 88, 185, 0.28),
+            transparent 50%
+        );
+
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(1050px, 92%);
+
+    margin: 0 auto;
+
+    text-align: center;
+}
+
+.hero-label {
+    display: inline-block;
+
+    border: 1px solid rgba(54, 143, 255, 0.75);
+
+    border-radius: 30px;
+
+    padding: 9px 24px;
+
+    color: #d8e9ff;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+    background: rgba(4, 35, 83, 0.25);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 5.5vw, 74px);
+
+    line-height: 1;
+
+    letter-spacing: -2.5px;
+
+    font-weight: 700;
+
+    margin: 0 0 20px;
+}
+
+.hero-description {
+    font-size: 18px;
+
+    line-height: 1.6;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    margin: 0 0 38px;
+}
+
+
+/* =========================================================
+   BUSINESS / LEISURE
+========================================================= */
+
+.travel-options {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 22px;
+
+    text-align: left;
+}
+
+.travel-card {
+    min-height: 230px;
+
+    padding: 32px 38px;
+
+    border: 1px solid rgba(72, 157, 255, 0.65);
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(15, 57, 126, 0.80),
+            rgba(8, 42, 98, 0.62)
+        );
+
+    backdrop-filter: blur(7px);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.08),
+        0 15px 45px rgba(0, 0, 0, 0.12);
+}
+
+.card-label {
+    color: #b9d7ff;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 9px;
+}
+
+.travel-card h2 {
+    font-size: 27px;
+
+    margin: 0 0 10px;
+}
+
+.travel-card p {
+    max-width: 500px;
+
+    font-size: 15px;
+
+    line-height: 1.55;
+
+    color: rgba(255, 255, 255, 0.88);
+
+    margin: 0 0 20px;
+}
+
+
+/* =========================================================
+   CARD BUTTONS
+========================================================= */
+
+.card-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 9px;
+
+    border-radius: 40px;
+
+    padding: 12px 23px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.card-button:hover {
+    transform: translateY(-2px);
+}
+
+.business-button {
+    background: #ff604f;
+}
+
+.leisure-button {
+    background: #39d4d1;
+}
+
+
+/* =========================================================
+   SEARCH BOX
+========================================================= */
+
+.search-wrapper {
+    position: absolute;
+
+    z-index: 20;
+
+    width: min(1120px, 92%);
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    bottom: -62px;
+
+    margin: 0;
+}
+
+.home-search {
+    width: 100%;
+
+    min-height: 122px;
+
+    box-sizing: border-box;
+
+    background: #fbf8f1;
+
+    border-radius: 18px;
+
+    padding: 24px 28px;
+
+    display: grid;
+
+    grid-template-columns:
+        1.15fr
+        1.15fr
+        0.82fr
+        0.72fr
+        auto;
+
+    gap: 18px;
+
+    align-items: end;
+
+    box-shadow:
+        0 18px 45px rgba(0, 0, 0, 0.20);
+}
+
+.search-field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-width: 0;
+}
+
+.search-field label {
+    color: #18336d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.search-field input,
+.search-field select {
+    width: 100%;
+
+    height: 52px;
+
+    box-sizing: border-box;
+
+    border: 1px solid #d1d5dc;
+
+    border-radius: 9px;
+
+    background: #fffdf9;
+
+    color: #18336d;
+
+    padding: 0 15px;
+
+    outline: none;
+
+    font-size: 14px;
+
+    font-family: inherit;
+}
+
+.search-field input::placeholder {
+    color: #70809d;
+}
+
+.search-field input:focus,
+.search-field select:focus {
+    border-color: #ff604f;
+
+    box-shadow:
+        0 0 0 3px rgba(255, 96, 79, 0.10);
+}
+
+.search-field select {
+    appearance: none;
+
+    background-image:
+        linear-gradient(
+            45deg,
+            transparent 50%,
+            #0b244f 50%
+        ),
+        linear-gradient(
+            135deg,
+            #0b244f 50%,
+            transparent 50%
+        );
+
+    background-position:
+        calc(100% - 17px) 22px,
+        calc(100% - 11px) 22px;
+
+    background-size:
+        6px 6px,
+        6px 6px;
+
+    background-repeat: no-repeat;
+
+    padding-right: 35px;
+}
+
+
+/* =========================================================
+   SEARCH BUTTON
+========================================================= */
+
+.search-button {
+    height: 52px;
+
+    border: none;
+
+    border-radius: 40px;
+
+    padding: 0 27px;
+
+    background: #ff5c4d;
+
+    color: #ffffff;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 8px 20px rgba(255, 92, 77, 0.22);
+
+    transition:
+        transform 0.2s ease,
+        filter 0.2s ease;
+}
+
+.search-button:hover {
+    transform: translateY(-2px);
+
+    filter: brightness(1.06);
+}
+
+
+/* =========================================================
+   POPULAR ROUTES
+========================================================= */
+
+.popular-routes {
+    position: relative;
+
+    z-index: 1;
+
+    background: #faf8f2;
+
+    padding: 145px 0 65px;
+}
+
+.routes-container {
+    width: min(1120px, 92%);
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.section-heading {
+    margin-bottom: 28px;
+}
+
+.section-heading span {
+    display: block;
+
+    color: #e66b5d;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 7px;
+}
+
+.section-heading h2 {
+    color: #17274c;
+
+    font-size: 30px;
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+
+    margin: 0;
+}
+
+
+/* =========================================================
+   ROUTE CARDS
+========================================================= */
+
+.route-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.route-card {
+    position: relative;
+
+    height: 345px;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #18294e;
+
+    display: block;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 10px 28px rgba(0, 0, 0, 0.10);
+}
+
+.route-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.4s ease;
+}
+
+.route-card:hover img {
+    transform: scale(1.04);
+}
+
+.route-card-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 15, 35, 0.03) 30%,
+            rgba(5, 15, 35, 0.30) 55%,
+            rgba(5, 15, 35, 0.88) 100%
+        );
+}
+
+.route-card-content {
+    position: absolute;
+
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+
+    color: #ffffff;
+}
+
+.route-country {
+    display: block;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    margin-bottom: 6px;
+}
+
+.route-bottom {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 10px;
+}
+
+.route-bottom h3 {
+    font-size: 18px;
+
+    font-weight: 500;
+
+    margin: 0;
+}
+
+.route-bottom strong {
+    background: rgba(255, 255, 255, 0.13);
+
+    padding: 7px 10px;
+
+    border-radius: 5px;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   HOLIDAY OFFER
+========================================================= */
+
+.holiday-offer {
+    width: 100%;
+    box-sizing: border-box;
+
+    margin-top: 52px;
+
+    min-height: 145px;
+
+    border-radius: 14px;
+
+    padding: 30px 38px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff836f,
+            #f26e61
+        );
+
+    color: #ffffff;
+}
+
+.offer-text {
+    min-width: 0;
+}
+
+.offer-text span {
+    display: block;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 7px;
+}
+
+.offer-text h3 {
+    margin: 0 0 6px;
+
+    font-size: 21px;
+}
+
+.offer-text p {
+    max-width: 700px;
+
+    margin: 0;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.offer-button {
+    flex-shrink: 0;
+
+    background: #5b5b78;
+
+    color: #ffffff;
+
+    padding: 14px 31px;
+
+    border-radius: 40px;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+.offer-button:hover {
+    transform: translateY(-2px);
+
+    background: #4c4c68;
+}
+
+
+/* =========================================================
+   PERSONALIZED TRAVEL
+========================================================= */
+
+.personalized-travel {
+    width: 100%;
+
+    background: #faf8f2;
+
+    padding: 35px 0 70px;
+}
+
+.personalized-container {
+    width: min(1120px, 92%);
+
+    margin: 0 auto;
+}
+
+
+/* Heading */
+
+.personalized-heading {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.personalized-heading span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #e66b5d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 3px;
+}
+
+.personalized-heading h2 {
+    margin: 0;
+
+    color: #17274c;
+
+    font-size: 30px;
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -0.8px;
+}
+
+
+/* =========================================================
+   RECOMMENDATION CARDS
+========================================================= */
+
+.recommendation-cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 24px;
+
+    align-items: stretch;
+}
+
+.recommendation-card {
+    min-width: 0;
+
+    min-height: 300px;
+
+    box-sizing: border-box;
+
+    padding: 38px 38px 30px;
+
+    background: #fbfaf6;
+
+    border: 1px solid #e4e0d8;
+
+    border-radius: 18px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    box-shadow:
+        0 8px 24px rgba(20, 32, 62, 0.04);
+}
+
+
+/* Age label */
+
+.recommendation-age {
+    margin-bottom: 25px;
+
+    color: #e66b5d;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+/* Recommendation item */
+
+.recommendation-item {
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 18px;
+
+    margin-bottom: 21px;
+}
+
+.recommendation-item > div {
+    min-width: 0;
+}
+
+.recommendation-item h3 {
+    margin: 0 0 5px;
+
+    color: #17274c;
+
+    font-size: 14px;
+
+    line-height: 1.35;
+
+    font-weight: 700;
+}
+
+.recommendation-item p {
+    margin: 0;
+
+    color: #7b8495;
+
+    font-size: 8px;
+
+    line-height: 1.4;
+
+    letter-spacing: 0.7px;
+}
+
+.recommendation-item strong {
+    flex-shrink: 0;
+
+    min-width: 48px;
+
+    box-sizing: border-box;
+
+    padding: 8px 9px;
+
+    border-radius: 5px;
+
+    background: #5b5b78;
+
+    color: #ffffff;
+
+    text-align: center;
+
+    font-size: 10px;
+
+    font-weight: 700;
+}
+
+
+/* Recommendation button */
+
+.recommendation-button {
+    width: 100%;
+
+    box-sizing: border-box;
+
+    margin-top: auto;
+
+    padding: 11px 16px;
+
+    border: 1px solid #e4a49b;
+
+    border-radius: 30px;
+
+    background: transparent;
+
+    color: #e66b5d;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.2s ease;
+}
+
+.recommendation-button:hover {
+    background: #ff604f;
+
+    border-color: #ff604f;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   TRUST SECTION
+========================================================= */
+
+.trust-section {
+    width: min(1120px, 92%);
+
+    min-height: 125px;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 35px;
+
+    background: #faf8f2;
+
+    color: #233c6c;
+}
+
+.trust-item {
+    flex: 1;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 13px;
+
+    min-width: 0;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    white-space: nowrap;
+}
+
+.trust-icon {
+    width: 29px;
+    height: 29px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ff604f;
+
+    border: 2px solid #ff604f;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+}
+
+.trust-divider {
+    width: 1px;
+
+    height: 35px;
+
+    flex-shrink: 0;
+
+    background: #d7dce5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.footer {
+    width: 100%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #071536,
+            #062d69
+        );
+
+    color: #ffffff;
+
+    padding: 58px 0 25px;
+}
+
+
+/* Footer main grid */
+
+.footer-container {
+    width: min(1120px, 92%);
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        1.8fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 65px;
+
+    align-items: start;
+}
+
+
+/*
+   IMPORTANT:
+   Footer logo appearance is NOT redesigned.
+   These rules only make sure the footer brand
+   stays inside its column.
+*/
+
+.footer-brand {
+    min-width: 0;
+}
+
+.footer-logo {
+    display: inline-flex;
+
+    align-items: center;
+
+    text-decoration: none;
+}
+
+.footer-logo .logo-text {
+    color: #ffffff;
+}
+
+
+/* Footer description */
+
+.footer-brand p {
+    max-width: 365px;
+
+    margin: 22px 0 0;
+
+    color: rgba(255, 255, 255, 0.72);
+
+    font-size: 14px;
+
+    line-height: 1.65;
+}
+
+
+/* =========================================================
+   SOCIAL ICONS
+========================================================= */
+
+.social-icons {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 22px;
+}
+
+.social-icons a {
+    width: 34px;
+    height: 34px;
+
+    box-sizing: border-box;
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 14px;
+
+    transition: 0.2s ease;
+}
+
+.social-icons a:hover {
+    background: rgba(255, 255, 255, 0.10);
+
+    border-color: rgba(255, 255, 255, 0.55);
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+    min-width: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+.footer-column h3 {
+    margin: 0 0 6px;
+
+    color: #ff7667;
+
+    font-size: 11px;
+
+    line-height: 1;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+}
+
+.footer-column a {
+    color: rgba(255, 255, 255, 0.75);
+
+    font-size: 13px;
+
+    line-height: 1.4;
+
+    text-decoration: none;
+
+    transition: color 0.2s ease;
+}
+
+.footer-column a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.footer-bottom {
+    width: min(1120px, 92%);
+
+    margin: 48px auto 0;
+
+    padding-top: 22px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================================================
+   LARGE TABLETS
+========================================================= */
+
+@media (max-width: 1050px) {
+
+    .nav-links {
+        gap: 28px;
+    }
+
+    .footer-container {
+        gap: 40px;
+    }
+
+    .recommendation-card {
+        padding-left: 28px;
+        padding-right: 28px;
+    }
+
+    .home-search {
+        grid-template-columns:
+            1fr 1fr 1fr;
+    }
+
+    .search-button {
+        width: 100%;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .navbar {
+        height: 74px;
+    }
+
+    .nav-container {
+        justify-content: flex-start;
+    }
+
+    .nav-container .logo {
+        position: static;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        min-height: auto;
+
+        padding: 50px 0 100px;
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+
+    /* Travel cards */
+
+    .travel-options {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* Search */
+
+    .search-wrapper {
+        position: relative;
+
+        left: auto;
+        bottom: auto;
+
+        transform: none;
+
+        width: min(92%, 700px);
+
+        margin: 35px auto 0;
+    }
+
+    .home-search {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Routes */
+
+    .popular-routes {
+        padding-top: 70px;
+    }
+
+    .route-cards {
+        grid-template-columns: 1fr 1fr;
+    }
+
+
+    /* Personalized */
+
+    .recommendation-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .recommendation-card {
+        min-height: 270px;
+    }
+
+
+    /* Trust */
+
+    .trust-section {
+        min-height: 120px;
+
+        gap: 18px;
+    }
+
+    .trust-item {
+        font-size: 9px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Footer */
+
+    .footer-container {
+        grid-template-columns:
+            1.5fr 1fr 1fr;
+
+        gap: 40px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .route-ticker {
+        height: 34px;
+    }
+
+    .ticker-track {
+        font-size: 10px;
+
+        gap: 18px;
+
+        letter-spacing: 1.5px;
+    }
+
+
+    /* Hero */
+
+    .hero {
+        padding: 45px 0 80px;
+    }
+
+    .hero-label {
+        font-size: 9px;
+
+        padding: 8px 15px;
+
+        letter-spacing: 3px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+
+    /* Search */
+
+    .home-search {
+        grid-template-columns: 1fr;
+
+        padding: 24px;
+    }
+
+
+    /* Routes */
+
+    .popular-routes {
+        padding-top: 55px;
+
+        padding-bottom: 45px;
+    }
+
+    .route-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .route-card {
+        height: 330px;
+    }
+
+
+    /* Holiday */
+
+    .holiday-offer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 28px;
+    }
+
+    .offer-button {
+        width: 100%;
+
+        box-sizing: border-box;
+
+        text-align: center;
+    }
+
+
+    /* Personalized */
+
+    .personalized-travel {
+        padding-top: 25px;
+        padding-bottom: 45px;
+    }
+
+    .personalized-heading h2 {
+        font-size: 25px;
+    }
+
+    .recommendation-card {
+        padding: 30px 25px;
+    }
+
+
+    /* Trust */
+
+    .trust-section {
+        width: 92%;
+
+        flex-direction: column;
+
+        justify-content: center;
+
+        padding: 35px 0;
+
+        gap: 20px;
+    }
+
+    .trust-item {
+        flex: none;
+
+        font-size: 10px;
+    }
+
+    .trust-divider {
+        display: none;
+    }
+
+
+    /* Footer */
+
+    .footer {
+        padding-top: 45px;
+    }
+
+    .footer-container {
+        width: 88%;
+
+        grid-template-columns: 1fr 1fr;
+
+        gap: 35px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-bottom {
+        width: 88%;
+
+        margin-top: 40px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.5px;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL PHONES
+========================================================= */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 25px;
+    }
+
+    .recommendation-item h3 {
+        font-size: 13px;
+    }
+
+    .recommendation-item p {
+        font-size: 7px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-brand {
+        grid-column: auto;
+    }
+
+}

@@ -1,0 +1,1372 @@
+/* =========================================================
+   VOYA RAIL — CONFIRMATION PAGE
+   FIGMA STYLE / COMPLETE ISOLATED CSS
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+.confirmation-page,
+.confirmation-page * {
+    box-sizing: border-box;
+}
+
+.confirmation-page {
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+
+    background: #f7f6f2;
+    color: #0e2038;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+}
+
+.confirmation-page a {
+    text-decoration: none;
+}
+
+.confirmation-page button,
+.confirmation-page textarea {
+    font-family: inherit;
+}
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+
+.confirmation-page .confirmation-navbar {
+    width: 100%;
+    height: 76px;
+
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+
+    border-bottom: 1px solid #e7e5df;
+}
+
+
+/* =========================================================
+   VOYA LOGO
+========================================================= */
+
+.confirmation-page .voya-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #26364a;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 22px;
+
+    font-weight: 700;
+
+    white-space: nowrap;
+}
+
+.confirmation-page .voya-logo img {
+    display: block;
+
+    width: 100px;
+    height: 100px;
+
+    object-fit: contain;
+}
+
+.confirmation-page .logo-icon {
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #e86a45;
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   TOP BACK BUTTON
+========================================================= */
+
+.confirmation-page .back-booking-btn {
+    min-width: 142px;
+    height: 40px;
+
+    padding: 0 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #243449;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #243449;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+}
+
+.confirmation-page .back-booking-btn:hover {
+    background: #0e2038;
+
+    color: #ffffff;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.confirmation-page .confirmation-hero {
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    margin: 0;
+
+    padding-top: 52px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    text-align: center;
+
+    background: #2a9c91;
+}
+
+
+/* =========================================================
+   SUCCESS ICON
+========================================================= */
+
+.confirmation-page .success-icon {
+    width: 58px;
+    height: 58px;
+
+    margin-bottom: 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #0e2038;
+
+    color: #e86a45;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 31px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   HERO TEXT
+========================================================= */
+
+.confirmation-page .confirmation-hero h1 {
+    margin: 0 0 7px;
+
+    color: #0e2038;
+
+    font-size: 35px;
+
+    line-height: 1.15;
+
+    font-weight: 700;
+}
+
+.confirmation-page .confirmation-hero p {
+    margin: 0;
+
+    padding: 0 20px;
+
+    color: rgba(14, 32, 56, .72);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   TICKET CARD
+========================================================= */
+
+.confirmation-page .ticket-card {
+    position: relative;
+
+    z-index: 5;
+
+    width: min(860px, calc(100% - 40px));
+
+    margin: -35px auto 0;
+
+    padding: 34px 38px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #dedfdc;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 35px rgba(14, 32, 56, .10);
+}
+
+
+/* =========================================================
+   TICKET HEADER
+========================================================= */
+
+.confirmation-page .ticket-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.confirmation-page .ticket-heading h2 {
+    margin: 0;
+
+    color: #26364a;
+
+    font-size: 25px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: .01em;
+}
+
+.confirmation-page .ticket-heading h2 span {
+    color: #e86a45;
+
+    padding: 0 5px;
+}
+
+
+/* =========================================================
+   CLASS BADGE
+========================================================= */
+
+.confirmation-page .class-badge {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    min-height: 28px;
+
+    padding: 7px 17px;
+
+    border-radius: 999px;
+
+    background: #606b7a;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: .08em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   TICKET LINE
+========================================================= */
+
+.confirmation-page .ticket-line {
+    width: 100%;
+
+    margin: 25px 0 30px;
+
+    border-top: 1px dashed #d9d8d2;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.confirmation-page .ticket-information {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    column-gap: 80px;
+
+    row-gap: 25px;
+}
+
+
+/* =========================================================
+   TICKET ITEM
+========================================================= */
+
+.confirmation-page .ticket-item {
+    min-width: 0;
+}
+
+
+/* =========================================================
+   TICKET LABEL
+========================================================= */
+
+.confirmation-page .ticket-label {
+    margin-bottom: 7px;
+
+    color: #9aa0a5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    letter-spacing: .08em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   TICKET VALUE
+========================================================= */
+
+.confirmation-page .ticket-value {
+    color: #667281;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    font-weight: 500;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   BOOKING REFERENCE
+========================================================= */
+
+.confirmation-page .booking-reference {
+    display: inline-flex;
+
+    min-width: 270px;
+
+    min-height: 29px;
+
+    padding: 7px 12px;
+
+    align-items: center;
+
+    background: #667281;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.2;
+
+    letter-spacing: .08em;
+
+    border-radius: 2px;
+}
+
+
+/* =========================================================
+   BARCODE SECTION
+========================================================= */
+
+.confirmation-page .barcode-section {
+    width: 100%;
+
+    margin-top: 31px;
+
+    padding-top: 25px;
+
+    border-top: 1px dashed #d9d8d2;
+
+    text-align: center;
+}
+
+
+/* =========================================================
+   BARCODE
+========================================================= */
+
+.confirmation-page .barcode {
+    width: min(520px, 90%);
+
+    height: 58px;
+
+    margin: 0 auto 9px;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+
+            #26364a 0px,
+            #26364a 2px,
+
+            transparent 2px,
+            transparent 5px,
+
+            #26364a 5px,
+            #26364a 6px,
+
+            transparent 6px,
+            transparent 9px
+        );
+}
+
+
+/* =========================================================
+   BARCODE NUMBER
+========================================================= */
+
+.confirmation-page .barcode-number {
+    color: #b3b5b5;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 9px;
+
+    line-height: 1.4;
+
+    letter-spacing: .20em;
+}
+
+
+/* =========================================================
+   RATING CARD
+========================================================= */
+
+.confirmation-page .rating-card {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(860px, calc(100% - 40px));
+
+    margin: 28px auto 0;
+
+    padding: 28px 38px 30px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e8ec;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 8px 25px rgba(14, 32, 56, .06);
+}
+
+
+/* =========================================================
+   RATING TITLE
+========================================================= */
+
+.confirmation-page .rating-card h2,
+.confirmation-page .rating-card h3 {
+    margin: 0 0 8px;
+
+    color: #0e2038;
+
+    font-size: 22px;
+
+    line-height: 1.3;
+
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   RATING DESCRIPTION
+========================================================= */
+
+.confirmation-page .rating-card p {
+    margin: 0 0 20px;
+
+    color: #7b8490;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   STARS CONTAINER
+   EXACTLY 5 STARS
+========================================================= */
+
+.confirmation-page .rating-stars,
+.confirmation-page .stars {
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    gap: 5px;
+
+    width: fit-content;
+
+    min-height: 30px;
+
+    margin: 0 0 22px;
+
+    padding: 0;
+}
+
+
+/* =========================================================
+   STAR BUTTON
+========================================================= */
+
+.confirmation-page .rating-stars .rating-star,
+.confirmation-page .stars .star {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    display: inline-flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex: 0 0 30px;
+
+    width: 30px;
+
+    height: 30px;
+
+    padding: 0;
+
+    margin: 0;
+
+    border: 0;
+
+    outline: none;
+
+    background: transparent !important;
+
+    color: #d7dce2;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 27px;
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    transition:
+        color .15s ease,
+        transform .15s ease;
+}
+
+
+/* =========================================================
+   SELECTED / ACTIVE STAR
+========================================================= */
+
+.confirmation-page .rating-stars .rating-star.active,
+.confirmation-page .stars .star.active {
+    color: #f4b942;
+}
+
+
+/* =========================================================
+   STAR HOVER
+========================================================= */
+
+.confirmation-page .rating-stars .rating-star:hover,
+.confirmation-page .stars .star:hover {
+    color: #f4b942;
+
+    transform: scale(1.08);
+}
+
+
+/* =========================================================
+   STAR FOCUS
+========================================================= */
+
+.confirmation-page .rating-stars .rating-star:focus,
+.confirmation-page .stars .star:focus {
+    outline: none;
+
+    box-shadow: none;
+}
+
+.confirmation-page .rating-stars .rating-star:focus-visible,
+.confirmation-page .stars .star:focus-visible {
+    outline: 2px solid #2a9c91;
+
+    outline-offset: 2px;
+
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.confirmation-page .rating-card textarea {
+    display: block;
+
+    width: 100%;
+
+    min-height: 120px;
+
+    margin: 0 0 20px;
+
+    padding: 16px;
+
+    box-sizing: border-box;
+
+    resize: vertical;
+
+    border: 1px solid #dfe3e8;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #0e2038;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+.confirmation-page .rating-card textarea::placeholder {
+    color: #b8bcbd;
+}
+
+.confirmation-page .rating-card textarea:focus {
+    border-color: #26a69a;
+}
+
+
+/* =========================================================
+   SUBMIT FEEDBACK BUTTON
+========================================================= */
+
+.confirmation-page .submit-feedback-btn,
+.confirmation-page .feedback-button {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 225px;
+
+    height: 48px;
+
+    padding: 0 25px;
+
+    border: 0;
+
+    border-radius: 999px;
+
+    background: #e8624c;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        transform .2s ease,
+        opacity .2s ease;
+}
+
+.confirmation-page .submit-feedback-btn:hover,
+.confirmation-page .feedback-button:hover {
+    background: #dc7350;
+
+    opacity: .9;
+
+    transform: translateY(-1px);
+}
+
+.confirmation-page .submit-feedback-btn:active,
+.confirmation-page .feedback-button:active {
+    transform: translateY(0);
+}
+
+.confirmation-page .submit-feedback-btn:disabled,
+.confirmation-page .feedback-button:disabled {
+    cursor: default;
+
+    opacity: .75;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   THANK YOU MESSAGE
+========================================================= */
+
+.confirmation-page .feedback-success {
+    margin: 0 0 12px;
+
+    color: #2a9c91;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   BOTTOM BACK
+========================================================= */
+
+.confirmation-page .bottom-back {
+    width: min(860px, calc(100% - 40px));
+
+    margin: 0 auto;
+
+    padding: 25px 0 70px;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+.confirmation-page .bottom-back-btn,
+.confirmation-page .center-btn .back-booking-btn {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 130px;
+
+    height: 40px;
+
+    padding: 0 20px;
+
+    border: 1px solid #b8bdc0;
+
+    border-radius: 999px;
+
+    background: #ffffff;
+
+    color: #67727d;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        border-color .2s ease,
+        color .2s ease,
+        background .2s ease;
+}
+
+.confirmation-page .bottom-back-btn:hover,
+.confirmation-page .center-btn .back-booking-btn:hover {
+    border-color: #26364a;
+
+    color: #26364a;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   CENTER BUTTON
+========================================================= */
+
+.confirmation-page .center-btn {
+    display: flex;
+
+    justify-content: center;
+
+    margin: 28px auto 70px;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.confirmation-page .confirmation-footer {
+    width: 100%;
+
+    background: #0d2949;
+
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER INNER
+========================================================= */
+
+.confirmation-page .footer-inner {
+    width: min(1050px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    padding: 55px 0 45px;
+
+    display: grid;
+
+    grid-template-columns:
+        2fr
+        1fr
+        1fr
+        1fr;
+
+    gap: 55px;
+}
+
+
+/* =========================================================
+   FOOTER BRAND
+========================================================= */
+
+.confirmation-page .footer-brand {
+    max-width: 280px;
+}
+
+.confirmation-page .footer-logo {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-bottom: 20px;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+.confirmation-page .footer-logo img {
+    display: block;
+
+    width: 100px;
+
+    height: 100px;
+
+    object-fit: contain;
+}
+
+.confirmation-page .footer-brand p {
+    margin: 0;
+
+    color: rgba(255,255,255,.65);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 12px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.confirmation-page .footer-column {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 11px;
+}
+
+.confirmation-page .footer-column h3 {
+    margin: 0 0 5px;
+
+    color: #ffffff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.3;
+
+    letter-spacing: .12em;
+}
+
+.confirmation-page .footer-column a {
+    color: rgba(255,255,255,.62);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 11px;
+
+    line-height: 1.4;
+
+    transition: color .2s ease;
+}
+
+.confirmation-page .footer-column a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   FOOTER BOTTOM
+========================================================= */
+
+.confirmation-page .footer-bottom {
+    width: min(1050px, calc(100% - 60px));
+
+    margin: 0 auto;
+
+    padding: 20px 0 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-top: 1px solid rgba(255,255,255,.10);
+
+    color: rgba(255,255,255,.45);
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size: 10px;
+
+    line-height: 1.4;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .confirmation-page .confirmation-navbar {
+        padding: 0 30px;
+    }
+
+    .confirmation-page .ticket-card,
+    .confirmation-page .rating-card {
+        width: calc(100% - 40px);
+    }
+
+    .confirmation-page .ticket-information {
+        column-gap: 40px;
+    }
+
+    .confirmation-page .footer-inner {
+        grid-template-columns:
+            1fr
+            1fr;
+
+        gap: 35px;
+    }
+
+    .confirmation-page .footer-brand {
+        max-width: 100%;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    /* NAVBAR */
+
+    .confirmation-page .confirmation-navbar {
+        width: 100%;
+
+        height: 68px;
+
+        padding: 0 18px;
+    }
+
+    .confirmation-page .voya-logo {
+        font-size: 19px;
+    }
+
+    .confirmation-page .voya-logo img {
+        width: 70px;
+
+        height: 70px;
+    }
+
+    .confirmation-page .logo-icon {
+        font-size: 17px;
+    }
+
+    .confirmation-page .back-booking-btn {
+        min-width: auto;
+
+        height: 36px;
+
+        padding: 0 13px;
+
+        font-size: 11px;
+    }
+
+
+    /* HERO */
+
+    .confirmation-page .confirmation-hero {
+        height: 265px;
+
+        padding-top: 38px;
+    }
+
+    .confirmation-page .success-icon {
+        width: 52px;
+
+        height: 52px;
+
+        font-size: 27px;
+    }
+
+    .confirmation-page .confirmation-hero h1 {
+        font-size: 29px;
+    }
+
+    .confirmation-page .confirmation-hero p {
+        padding: 0 20px;
+
+        font-size: 12px;
+    }
+
+
+    /* TICKET */
+
+    .confirmation-page .ticket-card {
+        width: calc(100% - 24px);
+
+        margin-top: -30px;
+
+        padding: 25px 20px;
+    }
+
+    .confirmation-page .ticket-heading {
+        gap: 12px;
+    }
+
+    .confirmation-page .ticket-heading h2 {
+        font-size: 21px;
+    }
+
+    .confirmation-page .class-badge {
+        padding: 6px 11px;
+
+        font-size: 9px;
+    }
+
+    .confirmation-page .ticket-information {
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+    }
+
+    .confirmation-page .booking-reference {
+        min-width: 0;
+
+        width: 100%;
+    }
+
+    .confirmation-page .barcode {
+        width: 95%;
+
+        height: 48px;
+    }
+
+
+    /* RATING */
+
+    .confirmation-page .rating-card {
+        width: calc(100% - 24px);
+
+        padding: 24px 20px;
+    }
+
+    .confirmation-page .rating-card h2,
+    .confirmation-page .rating-card h3 {
+        font-size: 20px;
+    }
+
+    .confirmation-page .rating-stars,
+    .confirmation-page .stars {
+        gap: 5px;
+
+        min-height: 30px;
+    }
+
+    .confirmation-page .rating-stars .rating-star,
+    .confirmation-page .stars .star {
+        flex: 0 0 28px;
+
+        width: 28px;
+
+        height: 29px;
+
+        font-size: 25px;
+    }
+
+    .confirmation-page .submit-feedback-btn,
+    .confirmation-page .feedback-button {
+        width: 100%;
+    }
+
+
+    /* BOTTOM BACK */
+
+    .confirmation-page .bottom-back {
+        width: calc(100% - 24px);
+
+        padding-bottom: 55px;
+    }
+
+
+    /* FOOTER */
+
+    .confirmation-page .footer-inner {
+        width: calc(100% - 40px);
+
+        grid-template-columns: 1fr;
+
+        gap: 30px;
+
+        padding: 40px 0;
+    }
+
+    .confirmation-page .footer-bottom {
+        width: calc(100% - 40px);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 10px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 400px) {
+
+    .confirmation-page .confirmation-navbar {
+        padding: 0 14px;
+    }
+
+    .confirmation-page .back-booking-btn {
+        padding: 0 10px;
+
+        font-size: 10px;
+    }
+
+    .confirmation-page .ticket-card,
+    .confirmation-page .rating-card {
+        width: calc(100% - 18px);
+    }
+
+    .confirmation-page .ticket-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+    .confirmation-page .ticket-heading h2 {
+        font-size: 20px;
+    }
+
+    .confirmation-page .class-badge {
+        align-self: flex-start;
+    }
+
+    .confirmation-page .rating-stars,
+    .confirmation-page .stars {
+        gap: 4px;
+    }
+
+    .confirmation-page .rating-stars .rating-star,
+    .confirmation-page .stars .star {
+        flex: 0 0 26px;
+
+        width: 26px;
+
+        font-size: 23px;
+    }
+}

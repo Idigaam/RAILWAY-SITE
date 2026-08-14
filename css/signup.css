@@ -1,0 +1,995 @@
+/* =========================================================
+   VOYA RAIL — SIGN UP PAGE
+   Complete Signup Stylesheet
+   ========================================================= */
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #ffffff;
+    color: #17233a;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.signup-header {
+    width: 100%;
+    height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 55px;
+
+    background: #ffffff;
+    border-bottom: 1px solid #e7e9ed;
+
+    position: relative;
+    z-index: 100;
+}
+
+.voya-logo {
+    display: flex;
+    align-items: center;
+}
+
+.voya-logo img {
+    width: 96px;
+    height: auto;
+    display: block;
+}
+
+.back-home {
+    height: 40px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0 20px;
+
+    border: 1px solid #d8dce2;
+    border-radius: 22px;
+
+    background: #ffffff;
+    color: #303a4a;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-home:hover {
+    background: #f6f7f9;
+    border-color: #c8cdd5;
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   MAIN TWO-COLUMN LAYOUT
+   ========================================================= */
+
+.signup-layout {
+    width: 100%;
+    min-height: calc(100vh - 76px);
+
+    display: grid;
+    grid-template-columns: 56% 44%;
+}
+
+
+/* =========================================================
+   LEFT HERO
+   ========================================================= */
+
+.signup-hero {
+    position: relative;
+
+    min-height: calc(100vh - 76px);
+
+    overflow: hidden;
+
+    /*
+       signup.css is inside /css
+       Media is outside /css
+    */
+    background-image: url("../Media/hero-train.png");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    /*
+       Adjust this if you want to move
+       the train inside the frame.
+    */
+    background-position: center center;
+}
+
+
+/* =========================================================
+   HERO OVERLAY
+   ========================================================= */
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 16, 34, 0.34) 0%,
+            rgba(4, 20, 43, 0.52) 45%,
+            rgba(3, 45, 91, 0.78) 100%
+        );
+}
+
+
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 620px;
+
+    padding-top: 175px;
+    padding-left: 95px;
+    padding-right: 45px;
+}
+
+
+/* =========================================================
+   HERO TAG
+   ========================================================= */
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 6px 13px;
+    margin-bottom: 24px;
+
+    background: #48d6d0;
+    color: #063e45;
+
+    border-radius: 2px;
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1.6px;
+}
+
+
+/* =========================================================
+   HERO HEADING
+   ========================================================= */
+
+.hero-content h1 {
+    max-width: 545px;
+
+    color: #ffffff;
+
+    font-size: 39px;
+    line-height: 1.17;
+
+    font-weight: 500;
+
+    letter-spacing: -0.7px;
+}
+
+
+/* =========================================================
+   RIGHT SIGNUP PANEL
+   ========================================================= */
+
+.signup-panel {
+    min-height: calc(100vh - 76px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 38px 55px;
+
+    background: #ffffff;
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   SIGNUP CARD
+   ========================================================= */
+
+.signup-card {
+    width: 100%;
+    max-width: 420px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP SWITCH
+   ========================================================= */
+
+.auth-switch {
+    width: 100%;
+    height: 44px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    padding: 3px;
+
+    margin-bottom: 39px;
+
+    background: #e9edf4;
+
+    border-radius: 24px;
+}
+
+.auth-switch a,
+.auth-switch span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 21px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.switch-login {
+    color: #8b94a3;
+
+    transition: color 0.2s ease;
+}
+
+.switch-login:hover {
+    color: #424d5e;
+}
+
+.switch-signup.active {
+    background: #ffffff;
+
+    color: #30394a;
+
+    box-shadow:
+        0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================================
+   TITLE
+   ========================================================= */
+
+.signup-card h2 {
+    margin-bottom: 31px;
+
+    text-align: center;
+
+    color: #28354a;
+
+    font-size: 21px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   FORM
+   ========================================================= */
+
+#signup-form {
+    width: 100%;
+}
+
+
+/* =========================================================
+   FIRST NAME / LAST NAME
+   ========================================================= */
+
+.name-row {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   FORM FIELD
+   ========================================================= */
+
+.field {
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #596474;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.field input {
+    width: 100%;
+    height: 43px;
+
+    padding: 0 13px;
+
+    border: 1px solid #dfe3e8;
+    border-radius: 5px;
+
+    outline: none;
+
+    background: #ffffff;
+
+    color: #26354a;
+
+    font-size: 13px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.field input:hover {
+    border-color: #c8ced7;
+}
+
+.field input:focus {
+    border-color: #8f9bad;
+
+    box-shadow:
+        0 0 0 3px rgba(89, 106, 132, 0.08);
+}
+
+.field input::placeholder {
+    color: #aeb4bd;
+}
+
+
+/* =========================================================
+   PASSWORD FIELD
+   ========================================================= */
+
+.password-field {
+    position: relative;
+
+    width: 100%;
+}
+
+.password-field input {
+    padding-right: 48px;
+}
+
+.password-toggle {
+    position: absolute;
+
+    top: 50%;
+    right: 5px;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transform: translateY(-50%);
+
+    border: 0;
+    border-radius: 50%;
+
+    background: transparent;
+
+    color: #89919d;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.password-toggle:hover {
+    background: #f3f4f6;
+    color: #414b5a;
+}
+
+.eye-icon {
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+/* =========================================================
+   TERMS
+   ========================================================= */
+
+.terms {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 8px;
+
+    margin-top: 1px;
+    margin-bottom: 20px;
+}
+
+.terms input {
+    width: 15px;
+    height: 15px;
+
+    margin-top: 1px;
+
+    flex: 0 0 15px;
+
+    accent-color: #ef806c;
+}
+
+.terms label {
+    color: #969da8;
+
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.terms a {
+    color: #737c88;
+
+    text-decoration: underline;
+
+    transition: color 0.2s ease;
+}
+
+.terms a:hover {
+    color: #414b59;
+}
+
+
+/* =========================================================
+   SIGN UP BUTTON
+   ========================================================= */
+
+.signup-button {
+    width: 100%;
+    height: 51px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 26px;
+
+    background: #f28b78;
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.signup-button:hover {
+    background: #eb7965;
+
+    box-shadow:
+        0 7px 18px rgba(242, 139, 120, 0.25);
+
+    transform: translateY(-1px);
+}
+
+.signup-button:active {
+    transform: translateY(0);
+}
+
+.signup-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   DIVIDER
+   ========================================================= */
+
+.divider {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin: 27px 0 23px;
+
+    color: #a0a6ae;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+
+    position: absolute;
+
+    top: 50%;
+
+    width: 35%;
+    height: 1px;
+
+    background: #eeeeee;
+}
+
+.divider::before {
+    left: 0;
+}
+
+.divider::after {
+    right: 0;
+}
+
+.divider span {
+    position: relative;
+    z-index: 2;
+
+    padding: 0 10px;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   SOCIAL LOGIN
+   ========================================================= */
+
+.social-login {
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    gap: 18px;
+}
+
+.social-button {
+    height: 43px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    border: 0;
+    border-radius: 6px;
+
+    background: #ffffff;
+
+    color: #858b94;
+
+    font-size: 12px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.social-button:hover {
+    background: #f7f8fa;
+
+    color: #333c4a;
+
+    transform: translateY(-1px);
+}
+
+.google-icon {
+    width: 19px;
+    height: 19px;
+
+    flex-shrink: 0;
+}
+
+.apple-icon {
+    width: 18px;
+    height: 18px;
+
+    flex-shrink: 0;
+
+    fill: #555b64;
+}
+
+
+/* =========================================================
+   ALREADY HAVE ACCOUNT
+   ========================================================= */
+
+.already-account {
+    margin-top: 27px;
+
+    text-align: center;
+
+    color: #a0a5ad;
+
+    font-size: 11px;
+}
+
+.already-account a {
+    margin-left: 3px;
+
+    color: #697383;
+
+    font-weight: 700;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   VALIDATION STATES
+   ========================================================= */
+
+.field input:invalid:not(:placeholder-shown) {
+    border-color: #e1a39a;
+}
+
+.field input:valid:not(:placeholder-shown) {
+    border-color: #dfe3e8;
+}
+
+
+/* =========================================================
+   DESKTOP — SHORT SCREENS
+   ========================================================= */
+
+@media (max-height: 760px) {
+
+    .signup-panel {
+        padding-top: 25px;
+        padding-bottom: 25px;
+    }
+
+    .hero-content {
+        padding-top: 105px;
+    }
+
+    .auth-switch {
+        margin-bottom: 27px;
+    }
+
+    .signup-card h2 {
+        margin-bottom: 25px;
+    }
+
+    .field {
+        margin-bottom: 13px;
+    }
+
+    .signup-button {
+        height: 47px;
+    }
+
+    .divider {
+        margin-top: 21px;
+        margin-bottom: 18px;
+    }
+
+    .already-account {
+        margin-top: 20px;
+    }
+}
+
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .signup-header {
+        padding: 0 30px;
+    }
+
+    .signup-layout {
+        grid-template-columns: 52% 48%;
+    }
+
+    .signup-panel {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .hero-content {
+        padding-left: 50px;
+        padding-right: 30px;
+        padding-top: 125px;
+    }
+
+    .hero-content h1 {
+        font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 820px) {
+
+    .signup-layout {
+        grid-template-columns: 48% 52%;
+    }
+
+    .signup-panel {
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .hero-content {
+        padding-left: 35px;
+    }
+
+    .hero-content h1 {
+        font-size: 30px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+    .signup-header {
+        height: 68px;
+
+        padding: 0 20px;
+    }
+
+    .signup-layout {
+        display: block;
+    }
+
+    .signup-hero {
+        width: 100%;
+        min-height: 430px;
+        height: 430px;
+
+        background-position: center center;
+    }
+
+    .hero-content {
+        max-width: 600px;
+
+        padding:
+            105px
+            30px
+            40px;
+    }
+
+    .hero-content h1 {
+        max-width: 540px;
+
+        font-size: 34px;
+        line-height: 1.2;
+    }
+
+    .signup-panel {
+        min-height: auto;
+
+        padding:
+            45px
+            25px
+            55px;
+    }
+
+    .signup-card {
+        max-width: 480px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .signup-header {
+        height: 65px;
+
+        padding: 0 15px;
+    }
+
+    .voya-logo img {
+        width: 82px;
+    }
+
+    .back-home {
+        height: 36px;
+
+        padding: 0 14px;
+
+        font-size: 10px;
+    }
+
+    .signup-hero {
+        min-height: 360px;
+        height: 360px;
+
+        background-position: center center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(5, 16, 34, 0.38) 0%,
+                rgba(4, 20, 43, 0.60) 55%,
+                rgba(3, 45, 91, 0.82) 100%
+            );
+    }
+
+    .hero-content {
+        padding:
+            85px
+            24px
+            30px;
+    }
+
+    .hero-tag {
+        padding: 5px 10px;
+
+        margin-bottom: 19px;
+
+        font-size: 8px;
+
+        letter-spacing: 1.3px;
+    }
+
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 1.2;
+    }
+
+    .signup-panel {
+        padding:
+            35px
+            20px
+            45px;
+    }
+
+    .auth-switch {
+        margin-bottom: 30px;
+    }
+
+    .signup-card h2 {
+        margin-bottom: 27px;
+
+        font-size: 19px;
+    }
+
+    .name-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .social-login {
+        gap: 8px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 360px) {
+
+    .back-home {
+        padding: 0 10px;
+        font-size: 9px;
+    }
+
+    .signup-hero {
+        min-height: 330px;
+        height: 330px;
+    }
+
+    .hero-content {
+        padding:
+            70px
+            20px
+            25px;
+    }
+
+    .hero-content h1 {
+        font-size: 25px;
+    }
+
+    .signup-panel {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .social-login {
+        grid-template-columns: 1fr;
+    }
+}
