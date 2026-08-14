@@ -22,7 +22,8 @@
             <span>Voya</span>
         </a>
 
-        <a href="s.html" class="back-bookings-btn">
+        <!-- CORRECTED: bookings.html -->
+        <a href="bookings.html" class="back-bookings-btn">
             Back to bookings
         </a>
 
@@ -56,8 +57,6 @@
 
         <section class="ticket-card">
 
-            <!-- Ticket heading -->
-
             <div class="ticket-heading">
 
                 <h2 id="route">
@@ -76,13 +75,9 @@
             <div class="ticket-line"></div>
 
 
-            <!-- Ticket information -->
-
             <div class="ticket-information">
 
-
                 <!-- PASSENGER -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -99,7 +94,6 @@
 
 
                 <!-- BOOKING REFERENCE -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -116,7 +110,6 @@
 
 
                 <!-- DEPARTS -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -133,7 +126,6 @@
 
 
                 <!-- ARRIVES -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -150,7 +142,6 @@
 
 
                 <!-- PLATFORM -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -165,7 +156,6 @@
 
 
                 <!-- PAID -->
-
                 <div class="ticket-item">
 
                     <div class="ticket-label">
@@ -189,7 +179,10 @@
 
             <div class="barcode-section">
 
-                <div class="barcode" id="barcode"></div>
+                <div
+                    class="barcode"
+                    id="barcode">
+                </div>
 
                 <div
                     class="barcode-number"
@@ -219,13 +212,47 @@
 
             <!-- STARS -->
 
-        <div class="stars" id="stars" aria-label="Rate your booking">
-    <button type="button" class="star" data-rating="1">★</button>
-    <button type="button" class="star" data-rating="2">★</button>
-    <button type="button" class="star" data-rating="3">★</button>
-    <button type="button" class="star" data-rating="4">★</button>
-    <button type="button" class="star" data-rating="5">★</button>
-</div>
+            <div
+                class="stars"
+                id="stars"
+                aria-label="Rate your booking">
+
+                <button
+                    type="button"
+                    class="star"
+                    data-rating="1">
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star"
+                    data-rating="2">
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star"
+                    data-rating="3">
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star"
+                    data-rating="4">
+                    ★
+                </button>
+
+                <button
+                    type="button"
+                    class="star"
+                    data-rating="5">
+                    ★
+                </button>
+
+            </div>
 
 
             <!-- COMMENT -->
@@ -282,7 +309,9 @@
 
             <div class="footer-brand">
 
-                <a href="index.html" class="footer-logo">
+                <a
+                    href="index.html"
+                    class="footer-logo">
 
                     <span class="logo-icon">▣</span>
                     <span>Voya</span>
@@ -317,7 +346,9 @@
 
                 <h3>ACCOUNT</h3>
 
-                <a href="#">My Bookings</a>
+                <!-- CORRECTED -->
+                <a href="bookings.html">My Bookings</a>
+
                 <a href="#">LOKO Rewards</a>
                 <a href="#">Preferences</a>
                 <a href="#">Corporate Portal</a>
@@ -356,27 +387,48 @@
     </footer>
 
 
+    <!-- =====================================================
+         JAVASCRIPT
+    ====================================================== -->
+
     <script src="js/confirmation.js"></script>
+
     <script>
-    const stars = document.querySelectorAll(".star");
 
-    stars.forEach((star) => {
-        star.addEventListener("click", () => {
+        /* STAR RATING */
 
-            const rating = Number(star.dataset.rating);
+        const stars =
+            document.querySelectorAll(".star");
 
-            stars.forEach((item) => {
-                const itemRating = Number(item.dataset.rating);
+        stars.forEach((star) => {
 
-                if (itemRating <= rating) {
-                    item.classList.add("active");
-                } else {
-                    item.classList.remove("active");
-                }
+            star.addEventListener("click", () => {
+
+                const rating =
+                    Number(star.dataset.rating);
+
+                stars.forEach((item) => {
+
+                    const itemRating =
+                        Number(item.dataset.rating);
+
+                    if (itemRating <= rating) {
+
+                        item.classList.add("active");
+
+                    } else {
+
+                        item.classList.remove("active");
+
+                    }
+
+                });
+
             });
 
         });
-    });
-</script>
+
+    </script>
+
 </body>
 </html>
